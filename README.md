@@ -34,3 +34,13 @@
 5. Thực hiện commit & push như với git bash nhé.
    Commit xong mọi người thấy chúng ta đã tạo được 2 commit rồi, có thể lên trên remote để kiểm tra nhé
    ![img](./img/vscode/vscode_6.png)
+6. Tạo nhánh mới: git branch <branch_name> (ví dụ: git branch phuonganh)
+7. Push nhánh từ local lên remote: git push <remote_name><branch_name> (ví dụ git push origin phuonganh)
+8. Chuyển nhánh: git checkout <banch_name> (Đang đứng ở nhánh master, muốn chuyển nhánh -> git checkout phuonganh)
+9. Thao tác merge 2 nhánh
+   Ví dụ: Bạn đang đứng ở nhánh phuonganh, bạn muốn chuyển dữ liệu ở nhánh phuonganh sang nhánh master.
+   b1 -> checkout sang nhánh master: git checkout master
+   b2 -> merge nhánh phuonganh: git merge phuonganh (nếu không conflict, xuất hiện dòng log thông báo các file thay đổi)
+   b3 -> đẩy dữ liệu lên remote: git push origin master
+10. Lưu ý các lệnh với git có thể thao tác bằng tay qua Vscode nhé. (Nên cài thêm các extension của git: Gitlens, Git History)
+    ![img](./img/vscode/vscode_7.png)
