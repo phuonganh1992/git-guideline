@@ -13,7 +13,7 @@
 
 5. Kết nối local repo & remote repo. Ở đây "origin" được hiểu là tên mặc định của remote repo, hoàn toàn có thể thay đổi được tên nhé.
    Sau đó local repo push lên remote bằng lệnh "git push origin master" - trong đó master là tên nhánh mặc định. Mọi người nhìn trên gitbash ngay từ khi tạo local repo thì đã hiện tên nhánh master kia. 1 số máy có thể hiện là main thì sửa lệnh là "git push origin main"
-   ![img](./img/gitbash/gitbash_7.png)
+   ![img][def]
 
 # VSCODE
 
@@ -34,3 +34,6 @@
 5. Thực hiện commit & push như với git bash nhé.
    Commit xong mọi người thấy chúng ta đã tạo được 2 commit rồi, có thể lên trên remote để kiểm tra nhé
    ![img](./img/vscode/vscode_6.png)
+
+
+[def]: ./img/gitbash/gitbash_7.png
