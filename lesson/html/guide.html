@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/html/base.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navigation links are places inside <nav> tag -->
+      <nav>
+        <div class="menu">
+          <a href="#intro">Giới thiệu html</a>
+          <a href="#tag">Giới thiệu các thẻ</a>
+          <a href="#table">Table</a>
+          <a href="#form">Form</a>
+        </div>
+      </nav>
+    </header>
+    <!-- HTML introduction -->
+    <section id="intro">
+      <article>
+        <h2>HTML là gì?</h2>
+        <img
+          class="intro-html"
+          src="/img/html/html_intro.png"
+          alt="introduction html"
+        />
+      </article>
+
+      <article>
+        <table>
+          <caption>
+            <h2>Cấu trúc HTML</h2>
+          </caption>
+          <tr>
+            <th>Cấu trúc</th>
+            <th>Giải thích</th>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              <div>
+                <p>&#60;&#33;DOCTYPE html&#62;</p>
+                <p>&#60;html lang="en"&#62;</p>
+                <p>&nbsp; &nbsp; &#60;head&#62;</p>
+                <p>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &#60;meta charset="UTF-8" /&#62;
+                </p>
+                <p>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &#60;title&#62;Đây là
+                  title&#60;/title&#62;
+                </p>
+                <p>&nbsp; &nbsp; &#60;/head&#62;</p>
+                <p>&nbsp; &nbsp; &#60;body&#62;</p>
+                <p>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Nội dung trang web</p>
+                <p>&nbsp; &nbsp; &#60;/body&#62;</p>
+                <p>&#60;/html&#62;</p>
+              </div>
+            </td>
+            <td>
+              Dòng đầu tiên khai báo loại văn bản &#60;&#33;DOCTYPE html&#62;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Tiếp đến là phần tử gốc của html (root tag) &#60;html&#62;, khai
+              báo language. <br />
+              Thẻ html bao gồm thẻ &#60;head&#62; và thẻ &#60;body&#62;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Thẻ &#60;head&#62; chứa các thẻ &#60;title&#62;, &#60;script&#62;,
+              &#60;style&#62;, &#60;link&#62;, &#60;meta&#62;. <br />
+              Thẻ &#60;title&#62; là phần tử cho biết tiêu đề văn bản <br />
+              Thẻ &#60;meta charset="UTF-8" /&#62; hỗ trọ hiển thị tiếng việt ở
+              website
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Thẻ &#60;body&#62; là phần tử chứa các nội dung trang sẽ hiển thị
+            </td>
+          </tr>
+        </table>
+      </article>
+
+      <article>
+        <h2>Sự khác nhau của HTML4 và HTML5</h2>
+        <div class="dif-html">
+          <img class="dif-html-img" src="/img/html/html4.png" alt="" />
+          <img class="dif-html-img" src="/img/html/html5.png" alt="" />
+        </div>
+      </article>
+    </section>
+    <!-- end HTML introduction -->
+    <hr />
+    <!-- HTML tags  -->
+    <section id="tag">
+      <article>
+        <h2>Thẻ HTML và thuộc tính</h2>
+        <img src="/img/html/tag_0.png" alt="" width="40%" />
+      </article>
+      <article>
+        <h2>Một số thẻ cơ bản</h2>
+        <div id="basicTag"></div>
+
+        <ul style="list-style-type: decimal-leading-zero">
+          <li>
+            <strong>Lưu ý thẻ &#60;a&#62;</strong>
+            <a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank"
+              >tag_a</a
+            >
+          </li>
+          <li>
+            <strong> Lưu ý về list:</strong>
+            <i
+              >dùng thuộc tính CSS list-style-type để định kiểu cho biểu tượng
+              của phần tử trong danh sách</i
+            >
+            <a
+              href="https://www.w3schools.com/html/html_lists.asp"
+              target="_blank"
+              >list</a
+            >
+            <br />
+            <img src="/img/html/list.png" width="30%" alt="" />
+          </li>
+          <li>
+            <strong>Lưu ý check trình duyệt</strong> có support thẻ không
+            <a href="https://caniuse.com/" target="_blank">CanIUse</a>
+          </li>
+          <li>
+            <strong>Lưu ý sự hiển thị của trình duyệt: </strong> Trình duyệt
+            khác nhau có sự hiển thị khác nhau <br />
+            <img src="/img/html/browser-display.png" alt="" width="30%" />
+          </li>
+        </ul>
+      </article>
+    </section>
+    <!-- end HTML tags -->
+    <hr />
+    <!-- HTML table -->
+    <section id="table">
+      <article>
+        <h2>Table</h2>
+        <table>
+          <tr>
+            <th>Full table</th>
+            <th colspan="2">Simple table</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="/img/html/table_1.png" alt="full table" width="50%" />
+            </td>
+            <td><img src="/img/html/table_2.png" alt="simple table" /></td>
+            <td>
+              <p>&#60;table&#62;: Định nghĩa một bảng</p>
+              <p>&#60;tr&#62;: Định nghĩa một dòng</p>
+              <p>&#60;th&#62;: Định nghĩa một ô tiêu đề</p>
+              <p>&#60;td&#62;: Định nghĩa một ô dữ liệu</p>
+            </td>
+          </tr>
+        </table>
+      </article>
+      <article>
+        <h2>Demo table</h2>
+      </article>
+    </section>
+    <!-- end HTML table -->
+    <hr />
+    <!-- Form -->
+    <section id="form">
+      <article>
+        <div id="formTag"></div>
+      </article>
+      <article>
+        <h2>Demo form</h2>
+      </article>
+
+      <!-- Form basic -->
+      <form action="google.com" method="get">
+        <fieldset style="width: 50%">
+          <legend>Tiêu đề thẻ form</legend>
+          <!-- <input type="text">
+          <select name="" id=""></select>
+          <textarea name="" id="" cols="30" rows="10"></textarea> -->
+        </fieldset>
+      </form>
+      <!-- End Form basic -->
+      <article>
+        <h2>Bài tập về nhà</h2>
+        <br />
+        <p>
+          Lưu ý: Các bạn bỏ bài tập về nhà vào path
+          "\git-guideline\lesson\html\form"
+        </p>
+        <img src="" alt="" />
+      </article>
+    </section>
+
+    <script src="/script/html.js"></script>
+  </body>
+</html>
