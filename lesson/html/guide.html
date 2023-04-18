@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="/css/html/base.css" />
   </head>
   <body>
+    <p>xin chào</p>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+
     <header>
       <!-- Navigation links are places inside <nav> tag -->
       <nav>
@@ -107,7 +115,7 @@
         <h2>Một số thẻ cơ bản</h2>
         <div id="basicTag"></div>
 
-        <ul style="list-style-type: decimal-leading-zero">
+        <ul style="list-style-type: disc">
           <li>
             <strong>Lưu ý thẻ &#60;a&#62;</strong>
             <a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank"
@@ -167,6 +175,39 @@
       </article>
       <article>
         <h2>Demo table</h2>
+        <table style="border: 1px solid black">
+          <caption>
+            Bảng điểm học sinh
+          </caption>
+          <tr>
+            <th>Học sinh</th>
+            <th>Toán</th>
+            <th>Văn</th>
+            <th>Anh</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Tổng</td>
+            <td colspan="3">10</td>
+          </tr>
+        </table>
       </article>
     </section>
     <!-- end HTML table -->
@@ -181,15 +222,64 @@
       </article>
 
       <!-- Form basic -->
-      <form action="google.com" method="get">
+      <form action="google.com" method="get" name="form-basic">
         <fieldset style="width: 50%">
           <legend>Tiêu đề thẻ form</legend>
-          <!-- <input type="text">
+          <input type="text" />
           <select name="" id=""></select>
-          <textarea name="" id="" cols="30" rows="10"></textarea> -->
+          <textarea name="" id="" cols="30" rows="10"></textarea>
         </fieldset>
       </form>
       <!-- End Form basic -->
+
+      <label for="name">Name: </label>
+      <input type="text" value="" name="" id="name" required /><br />
+      <label for="password">Password: </label
+      ><input type="password" name="" id="password" />
+      <br />
+      <input type="color" name="" id="" /><br />
+      <input type="date" name="" id="" /><br />
+      <input type="file" name="" id="" accept="image/*" /> <br />
+      <input type="number" name="" id="" min="1" max="10" step="2" /><br />
+      <input
+        type="range"
+        name=""
+        id=""
+        min="1"
+        max="10"
+        step="2"
+        value="1"
+      /><br />
+
+      <input type="button" value="Button" />
+      <input type="reset" value="Reset" />
+      <input type="submit" value="submit" /> <br />
+
+      <button type="reset">Button reset</button>
+      <button type="submit">Button submit</button>
+      <br />
+
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <label for="female">Female</label>
+
+      <br />
+
+      <input type="checkbox" name="hobby1" id="" />
+      <label for="">Bóng đá</label>
+      <input type="checkbox" name="hobby2" id="" /> <label for="">Cờ vua</label>
+      <input type="checkbox" name="hobby3" id="" />
+      <label for="">Nghe nhạc</label>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <article>
         <h2>Bài tập về nhà</h2>
         <br />
@@ -197,7 +287,7 @@
           Lưu ý: Các bạn bỏ bài tập về nhà vào path
           "\git-guideline\lesson\html\form"
         </p>
-        <img src="" alt="" />
+        <img src="/img/html/form_excercise.jpg" alt="" width="30%" />
       </article>
     </section>
 
