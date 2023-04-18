@@ -44,3 +44,6 @@
    b3 -> đẩy dữ liệu lên remote: git push origin master
 10. Lưu ý các lệnh với git có thể thao tác bằng tay qua Vscode nhé. (Nên cài thêm các extension của git: Gitlens, Git History)
     ![img](./img/vscode/vscode_7.png)
+11. Ngoài ra có thể tạo Pull Request trên github.com để tạo merge request nhé
+    ![img](./img/vscode/github_1.png)
+    ![img](./img/vscode/github_2.png)
