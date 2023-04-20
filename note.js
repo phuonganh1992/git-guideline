@@ -11,12 +11,12 @@ document.write ("date", day + "/" + month + "/" + year);*/
 
 let money = +prompt("số tiền bạn vay");
 let n = +prompt("số năm bạn vay");
-let rate = +prompt("phần trăm lãi suất")
+let rate = +prompt("phần trăm lãi suất / 100")
 
-pay = money + n * rate;
+pay = money * rate * n ;
 
-console.log ("số tiền phải thanh toán:", pay);
-document.write ("số tiền phải thanh toán:", pay);
+console.log ("số tiền lãi phải thanh toán:", pay);
+document.write ("số tiền lãi phải thanh toán:", pay);
 
 
 
