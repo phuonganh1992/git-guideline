@@ -1,0 +1,1 @@
+confirm ("Chào mọi người");
