@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    required{
+        color: red;
+    }
+    
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form action = "google.com" method="get" name="form-basic">
+        <fieldset style="width: 50%;">
+            <h1>Đăng ký môn học</h1>
+            <hr>
+            <table>
+                <tr>
+                    <td ><label for="hovaten" required>Họ và tên thí sinh <br> (ghi đầy đủ dấu tiếng Việt)  </label> <required>*</required> </td>
+                    <td colspan="3" > <input type="text" value="" name="" id="hovaten" class="border-ra"></td>
+                </tr>
+                <tr>
+                    <td><label for="cmnd">CMND </label> <required>*</required> </td>
+                    <td colspan="3"> <input type="text" value="" name="" id="cmnd" class="border-ra"></td>
+                </tr>
+                <tr>
+                    <td><label for="cmnd">Ngày sinh </label> <required>*</required> </td>
+                    <td>
+                        <select id="ngay" name="ngay" class="border-ddmmyy">
+                            <option selected>Ngày</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="thang" name="thang" class="border-ddmmyy">
+                            <option selected>Tháng</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <select id="nam" name="nam" class="border-ddmmyy">
+                            <option selected>Năm</option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr>
+
+                    <td> <label>Giới tính</label>  <required>*</required></td>
+                    <td colspan="3">
+                        <input type="radio" id="Nam" name="Gioitinh" value="Nam" checked> <label>Nam</label>
+                        <input type="radio" id="Nu" name="Gioitinh" value="Nu"> <label>Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email </label> <required>*</required></td>
+                    <td colspan="3"><input type="email" value="" name="" id="email" class="border-ra"></td>
+                </tr>
+                <tr>
+                    <td><label for="sdt">Số điện thoại liên lạc </label> <required>*</required></td>
+                    <td colspan="3"><input type="text" value="" name="" id="sdt" class="border-ra"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="diachi">Địa chỉ nhận giấy báo trúng tuyển </label> <required>*</required></td>
+                    <td colspan="3"> <textarea id="diachi" name="diachi" class="border-ra"> </textarea> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="tinh">Tỉnh/Thành phố lớp 12</label> </td>
+                    <td colspan="3">
+                        <select id="tinh" name="tinh" class="border-ra">
+                            <option selected>Thành phố Hồ Chí Minh</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="quan">Quận/Huyện lớp 12</label> </td>
+                    <td colspan="3">
+                        <select id="quan" name="quan" class="border-ra">
+                            <option selected>Quận 1</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="truong">Chọn trường lớp 12</label> </td>
+                    <td colspan="3">
+                        <select id="truong" name="truong" class="border-ra">
+                            <option selected>Chọn trường</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="nametn">Năm tốt nghiệp </label> <required>*</required> </td>
+                    <td>
+                        <input type="text" value="" name="nametn" id="nametn" class="border-ra">
+                    </td>
+                    <td colspan="2"></td>
+                </tr>
+
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td style="width: 161px;"></td>
+                    <td colspan="3" style="text-align: center;">
+                        <button type="submit" name="submit" id="submit" style=" color: black; background-color: red;"> <b>Gửi hồ sơ</b> </button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
