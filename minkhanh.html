@@ -8,45 +8,97 @@
     <title>Document</title>
 </head>
 <style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
+    body {
+        background-color: #192a56;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 7em;
     }
+
+    .w-form {
+        width: 600px;
+        background-color: white;
+    }
+
+    legend {
+        background-color: #8c7ae6;
+        border: solid 1px;
+    }
+    
+    .submit {
+        display: flex;
+        justify-content: center;
+    }
+
+    
 </style>
 
 <body>
-    <table style="width:100%">
-        <caption>Bảng điểm học sinh</caption>
-        <tr>
-            <th>Học sinh</th>
-            <th>toán</th>
-            <th>văn</th>
-            <th>anh</th>
-        </tr>
-        <tr>
-            <td>A</td>
-            <td>10</td>
-            <td>10</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>B</td>
-            <td>10</td>
-            <td>10</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>C</td>
-            <td>10</td>
-            <td>10</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>Tổng điểm</td>
-            <td colspan="3">10</td>
-        </tr>
-    </table>
+    <form action="login" method="post" class="w-form">
+        <fieldset>
+            <legend>ĐĂNG KÝ THÔNG TIN</legend>
+            <div class="fr__username">
+                <label for="username">Họ và tên thí sinh (ghi đầy đủ bằng tiếng Việt)</label>
+                <input type="text" name="username" style="margin: 20px 0 0 21px;">
+            </div>
+            <div class="fr__cccd">
+                <label for="cccd">CMND</label>
+                <input type="number" name="cccd" style="margin:20px 0 0 270px;">
+            </div>
+            <div class="fr__birthday">
+                <label for="birthday">Ngày sinh</label>
+                <input type="date" name="birthday" style="margin:20px 0 0 253px;">
+            </div>
+            <div class="fr__email">
+                <label for="email">Email</label>
+                <input type="email" name="email" style="margin:20px 0 0 280px;">
+            </div>
+            <div class="fr__contact">
+                <label for="contact">Điện thoại liên lạc</label>
+                <input type="number" name="contact" style="margin:20px 0 0 201px;">
+            </div>
+            <div class="fr__address">
+                <label for="fr__address--paper">Địa chỉ nhận giấy báo trúng tuyển</label>
+                <input type="text" name="fr__address--paper" style="margin:20px 0 0 101px; width: auto; height: 100px;">
+            </div>
+            <div class="fr__province">
+                <label for="provice">Tỉnh/ Thành phố lớp 12</label>
+                <select name="provice" style="margin:20px 0 0 166px;">
+                    <option value="HCM">Thành phố Hồ Chí Minh</option>
+                    <option value="HP">Thành phố Hải Phòng</option>
+                    <option value="NĐ">Thành phố Nam Định</option>
+                    <option value="ĐN">Thành phố Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="fr__district">
+                <label for="district">Quận/ Huyện lớp 12</label>
+                <select name="district" style="margin:20px 0 0 188px;">
+                    <option value="Q1">Quận 1</option>
+                    <option value="Q2">Quận 2</option>
+                    <option value="Q3">Quận 3</option>
+                    <option value="Q4">Quận 4</option>
+                </select>
+            </div>
+            <div class="fr__school">
+                <label for="school">Chọn trường học lớp 12</label>
+                <select name="school" style="margin:20px 0 0 165px;">
+                    <option value="NK">THPT Nguyễn Khuyến</option>
+                    <option value="THĐ">THPT Trần Hưng Đạo</option>
+                    <option value="CNT">THPT Nguyễn Công Trứ</option>
+                    <option value="LHP">THPT Lê Hồng Phong</option>
+                </select>
+            </div>
+            <div class="fr__finishingcoure">
+                <label for="finishingcoure">Năm tốt nghiệp</label>
+                <input type="number" name="finishingcoure" style="margin:20px 0 0 219px;">
+            </div>
+            <hr>
+            <div class="submit">
+                <button style="background-color: #c0392b; color: #ecf0f1;">Gửi Hồ Sơ</button>
+            </div>
+        </fieldset>
+    </form>
 </body>
 
-</html>
+</html> 
