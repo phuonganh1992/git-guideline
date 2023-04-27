@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kiểm tra 1 số là số chẵn hay số lẻ</title>
+    <script>
+        function kiemTra() {
+            let x = document.getElementById("number").value;
+            let a = document.getElementById("result");
+
+            if (x%2 === 0) {
+                a.innerHTML = "Số "+ x +" là số chẵn";
+            } else {
+                a.innerHTML = "Số "+ x + " là số lẻ";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Kiểm tra số chẵn số lẻ</h1>
+    <label for="number">Nhập số:</label>
+    <input type="number" id="number" placeholder="Nhập số">
+    <button onclick="kiemTra()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+</html>
