@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .button-width {
+        width: 50px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="num1" name="num1"> 
+
+    <input type="text" id="num2" name="num2"> 
+    <br />
+    <br />
+    <button type="button" onclick="getValue('+')" >Addition(+)</button>
+    <button type="button" onclick="getValue('-')" >Subtraction(-)</button>
+    <button type="button" onclick="getValue('*')" >Multiplication(x)</button>
+    <button type="button" onclick="getValue('/')" >Division(/)</button>
+    <br />
+    <br />
+    <label>Result: </label> 
+    <label id="result"></label> 
+ -->
+ <div>
+    <input type="text" id="result2" name="result2" style="width: 210px; text-align: right; border-style: none;"> <br>
+    <input type="text" id="result" name="result" style="width: 210px; text-align: right; border-style: none;">
+ </div>
+ 
+    <table>
+        <tr>
+            <td ><button type="button" id="ngoac1" name="ngoac1" class="button-width" onclick="getValue(this.innerText)"> <label>(</label></button></td>
+            <td><button type="button" id="ngoac2" name="ngoac2" class="button-width" onclick="getValue(this.innerText)"> <label>)</label></button></td>
+            <td><button type="button" id="phantram" name="phantram" class="button-width" onclick="getValue(this.innerText)"> <label>%</label></button></td>
+            <td><button type="button" id="AC" name="AC" class="button-width" onclick="phimAC()" > <label>AC</label></button></td>
+        </tr>
+        <tr>
+            <td ><button type="button" id="phim7" name="phim7" class="button-width" onclick="getValue(this.innerText)"> <label>7</label></button></td>
+            <td ><button type="button" id="phim8" name="phim8" class="button-width" onclick="getValue(this.innerText)"> <label>8</label></button></td>
+            <td ><button type="button" id="phim9" name="phim9" class="button-width" onclick="getValue(this.innerText)"> <label>9</label></button></td>
+            <td ><button type="button" id="phimchia" name="phimchia" class="button-width" onclick="getValue(this.innerText)"> <label>÷</label></button></td>
+        </tr>
+        <tr>
+            <td ><button type="button" id="phim4" name="phim4" class="button-width" onclick="getValue(this.innerText)"> <label>4</label></button></td>
+            <td ><button type="button" id="phim5" name="phim5" class="button-width" onclick="getValue(this.innerText)"> <label>5</label></button></td>
+            <td ><button type="button" id="phim6" name="phim6" class="button-width" onclick="getValue(this.innerText)"> <label>6</label></button></td>
+            <td ><button type="button" id="phimnhan" name="phimnhan" class="button-width" onclick="getValue(this.innerText)"> <label>×</label></button></td>
+        </tr>
+        <tr>
+            <td ><button type="button" id="phim1" name="phim1" class="button-width"  onclick="getValue(this.innerText)"> <label>1</label></button></td>
+            <td ><button type="button" id="phim2" name="phim2" class="button-width"  onclick="getValue(this.innerText)"> <label>2</label></button></td>
+            <td ><button type="button" id="phim3" name="phim3" class="button-width"  onclick="getValue(this.innerText)"> <label>3</label></button></td>
+            <td ><button type="button" id="phimtru" name="phimtru" class="button-width"  onclick="getValue(this.innerText)"> <label>-</label></button></td>
+        </tr>
+        <tr>
+            <td ><button type="button" id="phim0" name="phim0" class="button-width"  onclick="getValue(this.innerText)"> <label>0</label></button>  </td>
+            <td ><button type="button" id="phimcham" name="phimcham" class="button-width"  onclick="getValue(this.innerText)"> <label>.</label></button></td>
+            <td ><button type="button" id="phimbang" name="phimbang" class="button-width"  onclick="getValue(this.innerText); calculateResult()"> <label>=</label></button></td>
+            <td ><button type="button" id="phimcong" name="phimcong" class="button-width"  onclick="getValue(this.innerText)"> <label>+</label></button></td>
+        </tr>
+    </table>
+</body>
+    <script src="node.js"></script>
+</html>
