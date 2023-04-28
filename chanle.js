@@ -4,13 +4,13 @@ function checkrandom(){
         window.alert("Trống không");
     }
     else if(isNaN(checkrd)){
-        window.alert("đây không phải số");
+        alert("đây không phải số");
     }
     else if(checkrd % 2 == 0){
-        window.alert(checkrd + "là số chẵn");
+        alert(checkrd + "là số chẵn");
     }
     if(checkrd % 2 != 0){
-        window.alert(checkrd +"là số lẻ");
+        alert(checkrd +"là số lẻ");
     }
 
 }
