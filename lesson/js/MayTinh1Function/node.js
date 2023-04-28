@@ -1,5 +1,5 @@
 
-function calculate(operator)
+function calculate(element)
 {
     let  getNum1 = document.getElementById("num1").value;
     let  getNum2 = document.getElementById("num2").value;
@@ -14,6 +14,22 @@ function calculate(operator)
     }
     else
     {
+        if(element.innerHTML == "Addition(+)")
+        {
+            operator = '+';
+        }
+        else if(element.innerHTML == "Subtraction(-)")
+        {
+            operator = '-';
+        }
+        else if(element.innerHTML == "Multiplication(x)")
+        {
+            operator = '*';
+        }
+        else if(element.innerHTML == "Division(/)")
+        {
+            operator = '/';
+        }
         document.getElementById("result").innerHTML = eval(getNum1 + operator + getNum2);
     }
 }
