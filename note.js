@@ -32,13 +32,38 @@
 //let a = document.getElementById("123")
 //console.log(a)
 
-element.innerHTML = "<strong> xin chào mọi người</strong>";
+//a.innerHTML = "<strong> xin chào mọi người</strong>";
 
-let elementInput = document.getElementById("pass");
+//let elementInput = document.getElementById("pass");
 
-document.getElementById("btn").onclick = function () {
-  if (elementInput.getAttribute("type") == "password")
-    elementInput.setAttribute("type", "text");
-  else if (elementInput.getAttribute("type") == "text")
-    elementInput.setAttribute("type", "password");
-};
+//document.getElementById("btn").onclick = function () {
+  //if (elementInput.getAttribute("type") == "password")
+   // elementInput.setAttribute("type", "text");
+  //else if (elementInput.getAttribute("type") == "text")
+   // elementInput.setAttribute("type", "password");
+//};
+
+
+
+
+//kiem tra chan le
+function checkEvenNumber()
+{
+    var  getEvenNumber = document.getElementById("evenId").value;
+    if(getEvenNumber == '' || getEvenNumber == undefined)
+    {
+        window.alert("Vui lòng dữ liệu!");
+    }
+    else if(isNaN(getEvenNumber))
+    {
+        window.alert("Vui lòng nhập kiểu số!");
+    }
+    else if(getEvenNumber % 2 == 0)
+    {
+        window.alert(getEvenNumber + " là số chẵn");
+    }
+    else
+    {
+        window.alert(getEvenNumber + " là số lẻ");
+    }
+}
