@@ -49,18 +49,55 @@ document.write ("date", day + "/" + month + "/" + year);*/
 
 
 
-function checknumber() {
-    let inputElement = document.getElementById("numberInput");
-    let resultElement = document.getElementById("result");
-    let number = Number(inputElement.value);
+// function kiemtra() {
+//     let thuan = document.getElementById("numberInput");
+//     let anh = document.getElementById("result");
+//     let number1 = Number(thuan.value);
   
-    if (isNaN(number)) {
-      resultElement.innerText = "Vui lòng nhập một số hợp lệ.";
-    } else if (number % 2 === 0) {
-      resultElement.innerText = number + " là số chẵn.";
-    } else {
-      resultElement.innerText = number + " là số lẻ.";
-    }
-  }
+//     if (isNaN(number1)) {
+//       anh.innerText = "Vui lòng nhập một số hợp lệ.";
+//     } else if (number1 % 2 === 0) {
+//       anh.innerText = number1 + " là số chẵn.";
+//     } else {
+//       anh.innerText = number1 + " là số lẻ.";
+//     }
+//   }
 
 
+
+        // Hạ long 28/4
+              // let thuan = "heellloooo";
+              // document.getElementById("test"). innerHTML = thuan;
+
+
+        //       function myFunction() {
+        //         document.getElementById("demo").innerHTML = "Paragraph changed.";
+        //      }
+
+        function tong() {
+            let a = document.getElementById("numberA").value;
+            let b = document.getElementById("numberB").value;
+            c = parseInt(a) + parseInt(b)
+            document.getElementById("result") .innerHTML = a + "+" + b + " = " + c;
+        }
+
+        function hieu() {
+            let a = document.getElementById("numberA").value;
+            let b = document.getElementById("numberB").value;
+            c = parseInt(a) - parseInt(b)
+            document.getElementById("result") .innerHTML = a + "-" + b + " = " + c;
+        }
+
+        function tich() {
+            let a = document.getElementById("numberA").value;
+            let b = document.getElementById("numberB").value;
+            c = parseInt(a) * parseInt(b)
+            document.getElementById("result") .innerHTML = a + "*" + b + " = " + c;
+        }
+
+        function thuong() {
+            let a = document.getElementById("numberA").value;
+            let b = document.getElementById("numberB").value;
+            c = parseInt(a) / parseInt(b)
+            document.getElementById("result") .innerHTML = a + "/" + b + " = " + c;
+        }
