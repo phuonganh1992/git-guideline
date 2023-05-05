@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            left: 50%;
+            right: 100%;
+            width: 100%;
+        }
+        button {
+            width: 70px;
+            height: 70px;
+        }
+        
+        #result_1, #result_2 {
+          text-align: right;
+          width: 70%;}
+        
+        #result {
+        width: 300px;
+        height: 70px;
+        background-color:blanchedalmond;
+        border-radius: 5px;
+        margin-bottom: 10px;
+         }
+        #grid-container {
+            display: grid;
+        grid-template-columns: 70px 70px 70px 70px;
+        gap: 5px;
+        }
+        #result_1,
+        #result_2 {
+             text-align: right;
+             width: 100%;}
+
+
+
+    </style>
+</head>
+<body>
+
+    <form>
+        <div id="result">
+            <div id="result_1"></div>
+            <div id="result_2"></div>
+        </div>
+        <div class="grid-container" id="calculator">
+            <button type="button" class="btn" onclick="calculate(this.innerText)">(</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">)</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">%</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">AC</button> <br>
+
+            <button type="button" class="btn" onclick="calculate(this.innerText)">7</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">8</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">9</button> 
+            <button type="button" class="btn" onclick="calculate(this.innerText)">/</button> <br>
+
+            <button type="button" class="btn" onclick="calculate(this.innerText)">4</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">5</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">6</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">*</button> <br>
+
+            <button type="button" class="btn" onclick="calculate(this.innerText)">1</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">2</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">3</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">-</button> <br>
+
+            <button type="button" class="btn" onclick="calculate(this.innerText)">0</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">.</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">=</button>
+            <button type="button" class="btn" onclick="calculate(this.innerText)">+</button>
+        </div>
+
+    </form>
+    
+    <script>
+        let array = [
+          "(",
+          ")",
+          "%",
+          "AC",
+          "7",
+          "8",
+          "9",
+          "/",
+          "4",
+          "5",
+          "6",
+          "*",
+          "1",
+          "2",
+          "3",
+          "-",
+          "0",
+          ".",
+          "=",
+          "+",
+        ];
+        let str = "";
+        for (let i = 0; i < array.length; i++) {
+          str += `<button type="button" class="btn" onclick="calculate(this.innerText)">${array[i]}</button>`;
+        }
+  
+        document.getElementById("calculator").innerHTML = str;
+  
+        let element_1 = document.getElementById("result_1");
+        let element_2 = document.getElementById("result_2");
+  
+        let express = "";
+        let result = 0;
+  
+        function calculate(operator) {
+            if (operator === "=") {
+                result = eval(express);
+                element_1.innerText = express;
+                element_2.innerText = result;
+                express = result;
+            
+            } else if (operator === "AC") {
+                express= "";
+                result = 0;
+                element_1.innerText = express;
+                element_2.innerText = result;
+
+            } else {
+                express += operator;
+                element_1.innerText = express;
+                element_2.innerText = result;
+            }
+          
+        };
+          
+        
+      </script>
+    
+</body>
+</html>
