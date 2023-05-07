@@ -53,7 +53,7 @@ document.write ("date", day + "/" + month + "/" + year);*/
 //     let thuan = document.getElementById("numberInput");
 //     let anh = document.getElementById("result");
 //     let number1 = Number(thuan.value);
-  
+
 //     if (isNaN(number1)) {
 //       anh.innerText = "Vui lòng nhập một số hợp lệ.";
 //     } else if (number1 % 2 === 0) {
@@ -65,39 +65,232 @@ document.write ("date", day + "/" + month + "/" + year);*/
 
 
 
-        // Hạ long 28/4
-              // let thuan = "heellloooo";
-              // document.getElementById("test"). innerHTML = thuan;
+// Hạ long 28/4
+// let thuan = "heellloooo";
+// document.getElementById("test"). innerHTML = thuan;
 
 
-        //       function myFunction() {
-        //         document.getElementById("demo").innerHTML = "Paragraph changed.";
-        //      }
+//       function myFunction() {
+//         document.getElementById("demo").innerHTML = "Paragraph changed.";
+//      }
 
-        function tong() {
-            let a = document.getElementById("numberA").value;
-            let b = document.getElementById("numberB").value;
-            c = parseInt(a) + parseInt(b)
-            document.getElementById("result") .innerHTML = a + "+" + b + " = " + c;
+// function tong() {
+//     let a = document.getElementById("numberA").value;
+//     let b = document.getElementById("numberB").value;
+//     c = parseInt(a) + parseInt(b)
+//     document.getElementById("result") .innerHTML = a + "+" + b + " = " + c;
+// }
+
+// function hieu() {
+//     let a = document.getElementById("numberA").value;
+//     let b = document.getElementById("numberB").value;
+//     c = parseInt(a) - parseInt(b)
+//     document.getElementById("result") .innerHTML = a + "-" + b + " = " + c;
+// }
+
+// function tich() {
+//     let a = document.getElementById("numberA").value;
+//     let b = document.getElementById("numberB").value;
+//     c = parseInt(a) * parseInt(b)
+//     document.getElementById("result") .innerHTML = a + "*" + b + " = " + c;
+// }
+
+// function thuong() {
+//     let a = document.getElementById("numberA").value;
+//     let b = document.getElementById("numberB").value;
+//     c = parseInt(a) / parseInt(b)
+//     document.getElementById("result") .innerHTML = a + "/" + b + " = " + c;
+// }
+
+
+
+
+
+// hạ long 5/5
+
+// let i = prompt("nhap i");
+
+// if (i > 0) {
+//     console.log(`${i} la so duong`);
+
+// } else if (i == 0) {
+//     console.log(`${i} la so zero`);
+// }
+
+// else {
+//     console.log(`${i} la so am`);
+// }
+
+
+
+// ----------------
+// let i = +prompt("nhap i");
+
+// let kq=i>0?(`${i} la so duong`): (i==0)?(`${i} la so zero`):(`${i} la so am`);
+// document.write(kq);
+
+// ------------------------------
+
+
+// let thuan = +prompt("nhap vao")
+
+// switch(thuan){
+//     case 1:
+//         document.write("thuan10");
+//         break;
+//     case 2:
+//         document.write("thuan20");
+//          break;
+//     case 3:
+//          document.write("thuan30");
+//          break;
+//     default:
+//         document.write("nhap so sai");
+//         break;
+// }
+
+
+
+// let thuan = prompt("nhap vao")
+
+// switch(thuan){
+//     case "thuan1":
+//         document.write("thuan10");
+//         break;
+//     case "thuan2":
+//         document.write("thuan20");
+//          break;
+//     case "thuan3":
+//          document.write("thuan30");
+//          break;
+//     default:
+//         document.write("nhap sai");
+//         break;
+// }
+// ----------------------------------------------
+
+// let month = +prompt("nhập tháng")
+
+// switch(month){
+//     case 1:
+//     case 3:
+//     case 5:
+//     case 7:
+//     case 8:
+//     case 10:
+//     case 12:
+//         document.write("có 31 ngày");
+//         break;
+//     case 2:
+//         document.write("có 28 hoặc 29 ngày");
+//         break;
+//     case 4:
+//     case 6:
+//         document.write("có 30 ngày");
+//         break;
+//     default:
+//         document.write("nhap sai");
+//         break;
+// }
+
+// alert("làm bài tính năm nhuận và bài tập trên learn.")
+
+
+
+
+
+// hạ long 6/5
+// let yourName = prompt("Hãy nhập tên của bạn");
+// alert("Xin chào " + yourName);
+// ----------------------------------------------
+
+
+
+
+// bài toán tính năm nhuận
+// function tinhtoan() {
+//         let nhapthang = document.getElementById("nhapthang");
+//         let nhapnam = document.getElementById("nhapnam");
+//         let ketqua = document.getElementById("ketqua");
+
+//         let thang = Number(nhapthang.value);
+//         let nam = Number(nhapnam.value);
+
+//         // Kiểm tra năm nhuận
+//         let namnhuan = false;
+//         if (nam % 4 === 0) {
+//           if (nam % 100 === 0) {
+//             if (nam % 400 === 0) {
+//                 namnhuan = true;
+//             }
+//           } else {
+//                 namnhuan = true;
+//           }
+//         }
+
+//         // Tính số ngày trong tháng
+//         let tongsongay;
+//         switch (thang) {
+//           case 2:
+//             if (namnhuan) {
+//                 tongsongay = 29;
+//             } else {
+//                 tongsongay = 28;
+//             }
+//             break;
+//           case 4:
+//           case 6:
+//           case 9:
+//           case 11:
+//                 tongsongay = 30;
+//             break;
+//           default:
+//                 tongsongay = 31;
+//             break;
+//         }
+
+//         ketqua.textContent = `Tháng ${thang} năm ${nam} có ${tongsongay} ngày. Năm ${nam} ${namnhuan ? "là" : "không phải"} năm nhuận.`;
+//       }
+
+
+// hạ long 7/5
+
+
+
+
+function xemgia() {
+        let nhapgia = document.getElementById("nhapgia").value;
+
+        let ketqua = document.getElementById("ketqua");
+
+        switch (nhapgia) {
+                case "măng cụt":
+                        giatien = (" 50.000 VNĐ ");
+                        break;
+                case "ổi":
+                        giatien = (" 20.000 VNĐ ");
+                        break;
+                case "dưa hấu":
+                        giatien = (" 20.000 VNĐ ");
+                        break;
+                case "táo":
+                        giatien = (" 30.000 VNĐ ");
+                        break;
+                case "xoài":
+                        giatien = (" 30.000 VNĐ ");
+                        break;
+                case "cam":
+                        giatien = (" 40.000 VNĐ ");
+                        break;
+                case "chôm chôm":
+                        giatien = (" 40.000 VNĐ ");
+                        break;
         }
+        ketqua.textContent = ` Giá là:${giatien}`;
+}
 
-        function hieu() {
-            let a = document.getElementById("numberA").value;
-            let b = document.getElementById("numberB").value;
-            c = parseInt(a) - parseInt(b)
-            document.getElementById("result") .innerHTML = a + "-" + b + " = " + c;
-        }
 
-        function tich() {
-            let a = document.getElementById("numberA").value;
-            let b = document.getElementById("numberB").value;
-            c = parseInt(a) * parseInt(b)
-            document.getElementById("result") .innerHTML = a + "*" + b + " = " + c;
-        }
 
-        function thuong() {
-            let a = document.getElementById("numberA").value;
-            let b = document.getElementById("numberB").value;
-            c = parseInt(a) / parseInt(b)
-            document.getElementById("result") .innerHTML = a + "/" + b + " = " + c;
-        }
+
+
+
