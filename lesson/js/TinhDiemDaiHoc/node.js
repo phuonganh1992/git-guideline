@@ -299,7 +299,6 @@ function calAvg() {
   let anh = document.getElementById("Anh").value;
   let kv = document.getElementById("khuvuc").value;
   let tong = parseFloat(toan) + parseFloat(van) + parseFloat(anh);
-  let diemKV = 0;
   let result = 0;
   switch (kv) {
     case "KV1":
@@ -310,6 +309,7 @@ function calAvg() {
       result = tong + parseFloat(0.5);
       alert(`Tổng điểm là ${result}`);
       break;
+
     case "KV2":
       result = tong + parseFloat(0.25);
       alert(`Tổng điểm là ${result}`);
