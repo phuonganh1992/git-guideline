@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        gap: 10px;
+      }
+
+      #result {
+        width: 430px;
+        height: 50px;
+        background-color: #cecccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        border: 1px solid #cecccc;
+        border-radius: 5px;
+      }
+
+      
+      
+
+  
+      
+    </style>
+  </head>
+  <body>
+    <form>
+      <div id="result">
+        <div id="result_1"></div>
+        <div id="result_2"></div>
+      </div>
+      <div class="grid-container" id="calculator"></div>
+      
+    </form>
+
+    <script>
+      let array = [
+        "(",
+        ")",
+        "%",
+        "AC",
+        "7",
+        "8",
+        "9",
+        "/",
+        "4",
+        "5",
+        "6",
+        "*",
+        "1",
+        "2",
+        "3",
+        "-",
+        "0",
+        ".",
+        "=",
+        "+",
+      ];
+      let str = "";
+      for (let i = 0; i < array.length; i++) {
+        str += `<button type="button" class="btn" onclick="calculate(this.innerText)">${array[i]}</button>`;
+      }
+
+      document.getElementById("calculator").innerHTML = str;
+
+      let element_1 = document.getElementById("result_1");
+      let element_2 = document.getElementById("result_2");
+
+      let express = "";
+      let result = 0;
+
+      function calculate(operator) {
+        if (operator === "=") {
+          result = eval(express);
+          express += operator;
+          element_1.innerText = express;
+          element_2.innerText = result;
+          express = result;
+        } else if (operator === "AC") {
+          express = "";
+          result = 0;
+          element_1.innerText = express;
+          element_2.innerText = result;
+        } else {
+          express += operator;
+          element_1.innerText = express;
+          element_2.innerText = result;
+        }
+      }
+    </script>
+  </body>
+</html>
