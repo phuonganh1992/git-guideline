@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Tính điểm DH khối D</h2>
+  <div> Môn toán <input type="text" name=" toan" id="toan" size=5 /> </div>
+  <div> Môn văn <input type="text" name="van" id="van" size=5 /> </div>
+  <div> Môn Anh <input type="text" name ="anh" id="anh" size=5 /> </div>
+
+  <div>
+    <select id="khuvuc">
+      <option value = "kv1" id="1">KV1</option>
+      <option value = "kv2" id="2">KV2</option>
+      <option value = "kv2-nt" id="3">KV2-NT</option>
+      <option value = "kv3" id="4">KV3</option>
+    </select>
+  </div>
+
+  <button type="button" id="ketqua" onclick="tinhdiem()">Tính điểm</button>
+  <p id="tongket"> </p>
+
+
+
+
+
+
+  <script>
+    function tinhdiem(){
+   
+    let toan = parseFloat(document.getElementById("toan").value);
+    let van =  parseFloat(document.getElementById("van").value);
+    let anh = parseFloat(document.getElementById("anh").value);
+    let khuvuc = document.getElementById("khuvuc").value;
+
+  
+  switch (khuvuc){
+      case "kv1":
+        document.getElementById("tongket").innerHTML=toan + van + anh + 0.75
+        break;
+      case "kv2":
+        document.getElementById("tongket").innerHTML=toan + van + anh + 0.5
+        break;
+      case "kv2-nt":
+        document.getElementById("tongket").innerHTML=toan+van+anh+0.25
+        break;
+      case "kv3":
+        document.getElementById("tongket").innerHTML=toan + van + anh + 0
+        break;
+  }
+}
+  </script>
+  <script src="chanle.js"></script>
+</body>
+
+</html>
