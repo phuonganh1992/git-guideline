@@ -261,7 +261,7 @@
 let month = +prompt("Nhập số tháng trong năm: ");
 let year = +prompt("Nhập năm: ");
 var checkNamNhuan = false;
-checkNamNhuan = (year%4 == 0 && year%100 == 0 && year%4 == 0) ? true : false;
+checkNamNhuan = (year%4 == 0 && year%100 == 0 && year%400 == 0) ? true : false;
 switch (month) {
   case 1:
   case 3:
