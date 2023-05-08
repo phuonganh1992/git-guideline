@@ -21,7 +21,6 @@ function tinhtoan() {
     }
   
     let tong = toan + van + anh + diemcong;
-    let a = "";
     document.getElementById("tong").innerText=("Tổng điểm ĐH khối D của bạn là: " + tong);
   }
 
