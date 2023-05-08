@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm thi khối D</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tính điểm thi đại học khối D</h1>
+    <table>
+        <tr>
+            <th>Môn học</th>
+            <th>Điểm</th>
+        </tr>
+        <tr>
+            <td>Toán</td>
+            <td><input type="number" id="toan"></td>
+        </tr>
+        <tr>
+            <td>Văn</td>
+            <td><input type="number" id="van"></td>
+        </tr>
+        <tr>
+            <td>Anh</td>
+            <td><input type="number" id="anh"></td>
+        </tr>
+    </table><br>
+    <label for="khuvuc">Khu vực:</label>
+    <select id="khuvuc">
+        <option value="0">KV3</option>
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+    </select>
+    <br><br>
+    <button onclick="tinhDiem()">Tính toán</button>
+    <br><br>
+    <p id="result"></p>
+</body>
+<script>
+    function tinhDiem() {
+    const toan = parseFloat(document.getElementById("toan").value);
+    const van = parseFloat(document.getElementById("van").value);
+    const anh = parseFloat(document.getElementById("anh").value);
+    const khuvuc = parseFloat(document.getElementById("khuvuc").value);
+    let tongDiem = toan + van + anh;
+
+    switch (khuvuc) {
+            case 0.75:
+                    tongDiem += 0.75;
+                    break;
+            case 0.5:
+                    tongDiem += 0.5;
+                    break;
+            case 0.25:
+                    tongDiem += 0.25;
+                    break;
+    }
+
+    document.getElementById("result").textContent = `Tổng điểm: ${tongDiem}`;
+}
+</script>
+
+</html>
