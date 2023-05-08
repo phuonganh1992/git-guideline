@@ -207,87 +207,87 @@ document.write ("date", day + "/" + month + "/" + year);*/
 
 
 
-// bài toán tính năm nhuận
-// function tinhtoan() {
-//         let nhapthang = document.getElementById("nhapthang");
-//         let nhapnam = document.getElementById("nhapnam");
-//         let ketqua = document.getElementById("ketqua");
+                                                                                // bài toán tính năm nhuận
+function tinhtoan() {
+        let nhapthang = document.getElementById("nhapthang");
+        let nhapnam = document.getElementById("nhapnam");
+        let ketqua = document.getElementById("ketqua");
 
-//         let thang = Number(nhapthang.value);
-//         let nam = Number(nhapnam.value);
+        let thang = Number(nhapthang.value);
+        let nam = Number(nhapnam.value);
 
-//         // Kiểm tra năm nhuận
-//         let namnhuan = false;
-//         if (nam % 4 === 0) {
-//           if (nam % 100 === 0) {
-//             if (nam % 400 === 0) {
-//                 namnhuan = true;
-//             }
-//           } else {
-//                 namnhuan = true;
-//           }
-//         }
+        // Kiểm tra năm nhuận
+        let namnhuan = false;
+        if (nam % 4 === 0) {
+          if (nam % 100 === 0) {
+            if (nam % 400 === 0) {
+                namnhuan = true;
+            }
+          } else {
+                namnhuan = true;
+          }
+        }
 
-//         // Tính số ngày trong tháng
-//         let tongsongay;
-//         switch (thang) {
-//           case 2:
-//             if (namnhuan) {
-//                 tongsongay = 29;
-//             } else {
-//                 tongsongay = 28;
-//             }
-//             break;
-//           case 4:
-//           case 6:
-//           case 9:
-//           case 11:
-//                 tongsongay = 30;
-//             break;
-//           default:
-//                 tongsongay = 31;
-//             break;
-//         }
+        // Tính số ngày trong tháng
+        let tongsongay;
+        switch (thang) {
+          case 2:
+            if (namnhuan) {
+                tongsongay = 29;
+            } else {
+                tongsongay = 28;
+            }
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+                tongsongay = 30;
+            break;
+          default:
+                tongsongay = 31;
+            break;
+        }
 
-//         ketqua.textContent = `Tháng ${thang} năm ${nam} có ${tongsongay} ngày. Năm ${nam} ${namnhuan ? "là" : "không phải"} năm nhuận.`;
-//       }
+        ketqua.textContent = `Tháng ${thang} năm ${nam} có ${tongsongay} ngày. Năm ${nam} ${namnhuan ? "là" : "không phải"} năm nhuận.`;
+      }
 
 
 // hạ long 7/5
 
+                                                                                // tra cứu giá hoa quả
 
 
+// function xemgia() {
+//         let nhapgia = document.getElementById("nhapgia").value;
 
-function xemgia() {
-        let nhapgia = document.getElementById("nhapgia").value;
+//         let ketqua = document.getElementById("ketqua");
 
-        let ketqua = document.getElementById("ketqua");
-
-        switch (nhapgia) {
-                case "măng cụt":
-                        giatien = (" 50.000 VNĐ ");
-                        break;
-                case "ổi":
-                        giatien = (" 20.000 VNĐ ");
-                        break;
-                case "dưa hấu":
-                        giatien = (" 20.000 VNĐ ");
-                        break;
-                case "táo":
-                        giatien = (" 30.000 VNĐ ");
-                        break;
-                case "xoài":
-                        giatien = (" 30.000 VNĐ ");
-                        break;
-                case "cam":
-                        giatien = (" 40.000 VNĐ ");
-                        break;
-                case "chôm chôm":
-                        giatien = (" 40.000 VNĐ ");
-                        break;
-        }
-        ketqua.textContent = ` Giá là:${giatien}`;
-}
+//         switch (nhapgia) {
+//                 case "măng cụt":
+//                         giatien = (" 50.000 VNĐ ");
+//                         break;
+//                 case "ổi":
+//                         giatien = (" 20.000 VNĐ ");
+//                         break;
+//                 case "dưa hấu":
+//                         giatien = (" 20.000 VNĐ ");
+//                         break;
+//                 case "táo":
+//                         giatien = (" 30.000 VNĐ ");
+//                         break;
+//                 case "xoài":
+//                         giatien = (" 30.000 VNĐ ");
+//                         break;
+//                 case "cam":
+//                         giatien = (" 40.000 VNĐ ");
+//                         break;
+//                 case "chôm chôm":
+//                         giatien = (" 40.000 VNĐ ");
+//                         break;
+//         }
+//         ketqua.textContent = ` Giá là:${giatien}`;
+// }
 
 
 
