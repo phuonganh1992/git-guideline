@@ -207,55 +207,55 @@ document.write ("date", day + "/" + month + "/" + year);*/
 
 
 
-                                                                                // bài toán tính năm nhuận
-function tinhtoan() {
-        let nhapthang = document.getElementById("nhapthang");
-        let nhapnam = document.getElementById("nhapnam");
-        let ketqua = document.getElementById("ketqua");
+// bài toán tính năm nhuận
+// function tinhtoan() {
+//         let nhapthang = document.getElementById("nhapthang");
+//         let nhapnam = document.getElementById("nhapnam");
+//         let ketqua = document.getElementById("ketqua");
 
-        let thang = Number(nhapthang.value);
-        let nam = Number(nhapnam.value);
+//         let thang = Number(nhapthang.value);
+//         let nam = Number(nhapnam.value);
 
-        // Kiểm tra năm nhuận
-        let namnhuan = false;
-        if (nam % 4 === 0) {
-          if (nam % 100 === 0) {
-            if (nam % 400 === 0) {
-                namnhuan = true;
-            }
-          } else {
-                namnhuan = true;
-          }
-        }
+//         // Kiểm tra năm nhuận
+//         let namnhuan = false;
+//         if (nam % 4 === 0) {
+//           if (nam % 100 === 0) {
+//             if (nam % 400 === 0) {
+//                 namnhuan = true;
+//             }
+//           } else {
+//                 namnhuan = true;
+//           }
+//         }
 
-        // Tính số ngày trong tháng
-        let tongsongay;
-        switch (thang) {
-          case 2:
-            if (namnhuan) {
-                tongsongay = 29;
-            } else {
-                tongsongay = 28;
-            }
-            break;
-          case 4:
-          case 6:
-          case 9:
-          case 11:
-                tongsongay = 30;
-            break;
-          default:
-                tongsongay = 31;
-            break;
-        }
+//         // Tính số ngày trong tháng
+//         let tongsongay;
+//         switch (thang) {
+//           case 2:
+//             if (namnhuan) {
+//                 tongsongay = 29;
+//             } else {
+//                 tongsongay = 28;
+//             }
+//             break;
+//           case 4:
+//           case 6:
+//           case 9:
+//           case 11:
+//                 tongsongay = 30;
+//             break;
+//           default:
+//                 tongsongay = 31;
+//             break;
+//         }
 
-        ketqua.textContent = `Tháng ${thang} năm ${nam} có ${tongsongay} ngày. Năm ${nam} ${namnhuan ? "là" : "không phải"} năm nhuận.`;
-      }
+//         ketqua.textContent = `Tháng ${thang} năm ${nam} có ${tongsongay} ngày. Năm ${nam} ${namnhuan ? "là" : "không phải"} năm nhuận.`;
+//       }
 
 
 // hạ long 7/5
 
-                                                                                // tra cứu giá hoa quả
+// tra cứu giá hoa quả
 
 
 // function xemgia() {
@@ -288,7 +288,31 @@ function tinhtoan() {
 //         }
 //         ketqua.textContent = ` Giá là:${giatien}`;
 // }
+// <!-- tính tổng điểm thi khối D -->
 
+
+
+function tinhDiem() {
+        const toan = parseFloat(document.getElementById("toan").value);
+        const van = parseFloat(document.getElementById("van").value);
+        const anh = parseFloat(document.getElementById("anh").value);
+        const khuvuc = parseFloat(document.getElementById("khuvuc").value);
+        let tongDiem = toan + van + anh;
+
+        switch (khuvuc) {
+                case 0.75:
+                        tongDiem += 2.5;
+                        break;
+                case 0.5:
+                        tongDiem += 1.5;
+                        break;
+                case 0.25:
+                        tongDiem += 1;
+                        break;
+        }
+
+        document.getElementById("result").textContent = `Tổng điểm: ${tongDiem}`;
+}
 
 
 
