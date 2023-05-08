@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tính năm nhuận</title>
+</head>
+
+<body>
+    <h1>Tính số ngày trong tháng và kiểm tra năm nhuận</h1>
+    <label for="monthInput">Nhập tháng (1-12):</label>
+    <input type="number" id="monthInput" min="1" max="12">
+    <label for="yearInput">Nhập năm:</label>
+    <input type="number" id="yearInput">
+    <button onclick="calculate()">Tính toán</button>
+    <p id="result"></p>
+
+</body>
+<script>
+    function calculate() {
+        const monthInput = document.getElementById("monthInput");
+        const yearInput = document.getElementById("yearInput");
+        const resultElement = document.getElementById("result");
+
+        const month = Number(monthInput.value);
+        const year = Number(yearInput.value);
+
+        // Kiểm tra năm nhuận
+        let isLeapYear = false;
+        if (year % 4 === 0) {
+            if (year % 100 === 0) {
+                if (year % 400 === 0) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+
+        // Tính số ngày trong tháng
+        let daysInMonth;
+        switch (month) {
+            case 2:
+                if (isLeapYear) {
+                    daysInMonth = 29;
+                } else {
+                    daysInMonth = 28;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                daysInMonth = 30;
+                break;
+            default:
+                daysInMonth = 31;
+                break;
+        }
+
+        resultElement.textContent = `Tháng ${month} năm ${year} có ${daysInMonth} ngày. Năm ${year} ${isLeapYear ? "là" : "không phải"} năm nhuận.`;
+    }
+</script>
+
+</html>
