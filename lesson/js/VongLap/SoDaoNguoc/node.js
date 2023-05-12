@@ -343,11 +343,18 @@
 function ok() {
   let result = "";
   let input = document.getElementById("sodaonguoc").value;
-  for (let i = 1; i <= input.length; i++) {
-    result = result + input[input.length - i];
+  let i = 0;
+  let kq = 0;
+  let length = input.length;
+
+  while (i < length) {
+    kq = input % 10;
+    result = result + kq;
+    input = parseInt(input / 10);
+    i++;
   }
   alert(`Kết quả đảo ngược là ${result}`);
 }
 function cancel() {
-  document.getElementById("sodaonguoc").value = ""; 
+  document.getElementById("sodaonguoc").value = "";
 }
