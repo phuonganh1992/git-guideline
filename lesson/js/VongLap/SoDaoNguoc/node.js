@@ -307,7 +307,6 @@
 //   i++;
 // }
 
-
 // let sum = 0;
 // let number;
 // let i = 1;
@@ -320,7 +319,6 @@
 
 // console.log(`sum la : ${sum}`)
 
-
 // function play()
 // {
 //   document.getElementById("play").innerHTML = "Chơi lại";
@@ -328,7 +326,7 @@
 //   let numberRandom = Math.floor(Math.random() * numberMax);
 
 //   for (let i = 0; i < 3; i++) {
-    
+
 //     let numberGuess = +prompt("Người dùng đoán: ");
 //     if(numberRandom == numberGuess)
 //     {
@@ -340,19 +338,16 @@
 //       alert("Chúc bạn may mắn lần sau");
 //     }
 //   }
- 
+
 // }
-function ok()
-{
-  let result = '';
+function ok() {
+  let result = "";
   let input = document.getElementById("sodaonguoc").value;
   for (let i = 1; i <= input.length; i++) {
     result = result + input[input.length - i];
-    
   }
   alert(`Kết quả đảo ngược là ${result}`);
 }
-function cancel()
-{
-  document.getElementById("sodaonguoc").value = '';
+function cancel() {
+  document.getElementById("sodaonguoc").value = ""; 
 }
