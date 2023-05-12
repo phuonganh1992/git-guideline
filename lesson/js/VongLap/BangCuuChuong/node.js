@@ -360,11 +360,11 @@
 // }
 
 var str = '';
-for (let j = 1; j <= 10; j++) {
+for (let j = 1; j <= 9; j++) {
   str += '<tr >';
-    for (let i = 1; i <= 10; i++) {
-      let result = j * i;
-      str += `<td style="border: 1px solid;"> ${j} X ${i} = ${result} </td>`
+    for (let i = 2; i <= 9; i++) {
+      let result = i * j;
+      str += `<td style="border: 1px solid;"> ${i} X ${j} = ${result} </td>`
     }
   str += '</tr>';
 }
