@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="button1" onclick="doan()">đoán số</button>
+    <script>function doan(){
+        let i ;
+        let nhapso = prompt("nhập số ");
+        let ngaunhien = Math.floor(Math.random() * nhapso ) ;
+        let doanso = prompt("nhập số đoán");
+       for (i = 1; i< 3;i++){
+            if(doanso = ngaunhien){
+                window.alert(`đúng rồi ${ngaunhien} là số cần đoán`)
+                break;
+                
+            }
+            else("sai rồi")
+        }
+    }</script>
+</body>
+</html>
