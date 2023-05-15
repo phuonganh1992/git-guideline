@@ -5,11 +5,12 @@ let num2=1;
 let sum;
 let result="";
 while (n>0){
-    result+=num1+",";
+    result+=num1+", ";
     sum=num1+num2;
     num1=num2;
     num2=sum;
     n--;
 }
+result = result.substring(0, result.length-2);    
 document.getElementById("result").innerHTML = "Dãy Fibonacci: " + result;
 }
