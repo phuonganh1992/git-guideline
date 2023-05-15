@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tra cứu giá hoa quả</title>
+</head>
+
+<body>
+    <h1>Tra cứu giá hoa quả</h1>
+    <input type="text" id="nhapten">
+    <br><br>
+    <button onclick="tinhtoan()">Giá tiền</button>
+    <br><br>
+    <div id="ketqua"></div>
+
+    <script>
+        function tinhtoan() {
+            var nhapten = document.getElementById("nhapten").value;
+            var tien;
+
+            switch (nhapten) {
+                case "ổi":
+                case "dưa hấu":
+                    tien = 20000;
+                    break;
+                case "táo":
+                case "xoài":
+                    tien = 30000;
+                    break;
+                case "cam":
+                case "chôm chôm":
+                    tien = 40000;
+                    break;
+                case "măng cụt":
+                    tien = 50000;
+                    break;
+                
+            }
+
+
+            document.getElementById("ketqua").innerHTML = "Giá của " + nhapten + " là " + tien + " VNĐ/kg.";
+        }
+    </script>
+</body>
+
+</html>

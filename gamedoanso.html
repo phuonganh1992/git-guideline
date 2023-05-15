@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game "Hãy thử đoán xem!"</title>
+
+</head>
+
+<body>
+    <button onclick="startGame()">Chơi nào</button>
+
+    <script>
+        function startGame() {
+            var maxNumber = parseInt(prompt("Nhập vào số lớn nhất bạn muốn đoán:"));
+            var secretNumber = Math.floor(Math.random() * maxNumber) + 1;
+            var times = 1;
+
+            while (times <= 5) {
+                var guess = parseInt(prompt("Hãy đoán một số từ 1 đến " + maxNumber + ". Bạn đang đoán lần thứ " + times));
+
+                if (guess === secretNumber) {
+                    alert("Chúc mừng! Bạn đã đoán đúng số.");
+                    break;
+                } else if (guess < secretNumber) {
+                    alert("Số bạn đoán quá thấp!");
+                } else {
+                    alert("Số bạn đoán quá cao!");
+                }
+
+                times++;
+            }
+
+            if (times = 5) {
+                alert("Bạn đã hết lượt đoán. Số bí mật là: " + secretNumber);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -21,6 +21,7 @@
 <body>
     <h1>Tính điểm thi đại học khối D</h1>
     <table>
+        <!-- table là tạo 1 bảng, bảng này có 4 hàng tr,hàng đầu tiên in đậm là th, các hàng sau là dùng td -->
         <tr>
             <th>Môn học</th>
             <th>Điểm</th>
@@ -52,26 +53,26 @@
 </body>
 <script>
     function tinhDiem() {
-    const toan = parseFloat(document.getElementById("toan").value);
-    const van = parseFloat(document.getElementById("van").value);
-    const anh = parseFloat(document.getElementById("anh").value);
-    const khuvuc = parseFloat(document.getElementById("khuvuc").value);
-    let tongDiem = toan + van + anh;
+        const toan = parseFloat(document.getElementById("toan").value);
+        const van = parseFloat(document.getElementById("van").value);
+        const anh = parseFloat(document.getElementById("anh").value);
+        const khuvuc = parseFloat(document.getElementById("khuvuc").value);
+        let tongDiem = toan + van + anh;
 
-    switch (khuvuc) {
+        switch (khuvuc) {
             case 0.75:
-                    tongDiem += 0.75;
-                    break;
+                tongDiem += 0.75;
+                break;
             case 0.5:
-                    tongDiem += 0.5;
-                    break;
+                tongDiem += 0.5;
+                break;
             case 0.25:
-                    tongDiem += 0.25;
-                    break;
-    }
+                tongDiem += 0.25;
+                break;
+        }
 
-    document.getElementById("result").textContent = `Tổng điểm: ${tongDiem}`;
-}
+        document.getElementById("result").textContent = `Tổng điểm: ${tongDiem}`;
+    }
 </script>
 
 </html>
