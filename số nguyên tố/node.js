@@ -1,6 +1,7 @@
 let numbers = parseInt(prompt("Số lượng số nguyên tố:"));
+let result="";
 if (numbers < 2) {
-  alert("Số lượng số nguyên tố phải lớn hơn hoặc bằng 2!");
+  alert("Số lượng số nguyên tố phải lớn hơn hoặc bằng 2.");
 } else {
   let count = 0;
   let N = 2;
@@ -13,10 +14,13 @@ if (numbers < 2) {
       }
     }
     if (SNT) {
-        document.getElementById("result").innerHTML += N + ", ";
+        result += N + ", ";
         count++;
     }
     N++;
   }
+result = result.substring(0, result.length - 2);
+document.getElementById("result").innerHTML = result;
 }
+
 
