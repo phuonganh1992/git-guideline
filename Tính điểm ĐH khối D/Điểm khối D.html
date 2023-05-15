@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Tính điểm đại học khối D</title>
+</head>
+<body>
+    <label for="toan">Môn Toán:</label>
+    <input type="number" id="toan" name="toan"><br><br>
+      
+    <label for="van">Môn Văn:</label>
+    <input type="number" id="van" name="van"><br><br>
+      
+    <label for="anh">Môn Anh:</label>
+    <input type="number" id="anh" name="anh"><br><br>
+      
+    <label for="kv">Khu vực:</label>
+    <select id="kv" name="kv">
+        <option value="kv1">KV1</option>
+        <option value="kv2-nt">KV2-NT</option>
+        <option value="kv2">KV2</option>
+        <option value="kv3">KV3</option>
+    </select><br><br>
+      
+    <button type="button" onclick="tinhtoan()">Tính điểm</button>
+    <script src="node.js"></script> 
+    <p id="tong"></p>     
+</body>
+</html>
