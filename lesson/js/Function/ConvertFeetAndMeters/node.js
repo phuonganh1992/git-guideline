@@ -126,7 +126,7 @@ function calConvert()
     let convertValue = document.getElementById("Convert").value;
     if(convertValue == 1)
     {
-        getResult.innerHTML =  0.305 * inputValue;
+        getResult.innerHTML =  eval(3.279  * inputValue);
     }
     else
     {
