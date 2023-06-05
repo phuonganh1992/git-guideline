@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+  </head>
+  <body>
+    <script src="Apple.js"></script>
+    <script src="Human.js"></script>
+    <script>
+      let adam = new Human("Adam", true, 60);
+      let eva = new Human("Eva", false, 45);
+      let tao = new Apple();
+      adam.say("Hello");
+    //   adam.eat(tao);
+    //   console.log(adam.weight);
+    //   console.log(tao.weight);
+    //   eva.eat(tao);
+    //   console.log(eva.weight);
+    //   console.log(tao.weight);
+      do {
+        adam.eat(tao);
+        eva.eat(tao);
+        console.log(adam.weight);
+        console.log(eva.weight);
+        console.log(tao.weight);
+    } while (tao.weight > 0);
+    </script>
+  </body>
+</html>
