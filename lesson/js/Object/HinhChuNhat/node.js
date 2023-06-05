@@ -44,14 +44,13 @@
 // }
 // console.log(`In ra indexFor:  ${indexFor}`);
 
-
 //Sắp xếp mảng tăng dần
 // let numbers = [5, -3, 1, 3, 2, 10];
 // let valueTemp = 0;
 // for (let i = 0; i < numbers.length; i++) {
 //   for (let j = i+1; j < numbers.length; j++) {
 //     if (numbers[i] > numbers[j]) {
-//       valueTemp = numbers[j];  
+//       valueTemp = numbers[j];
 //       numbers[j] = numbers[i];
 //       numbers[i] = valueTemp;
 //     }
@@ -66,14 +65,13 @@
 // for (let i = 0; i < numbers2.length; i++) {
 //   for (let j = i+1; j < numbers2.length; j++) {
 //     if (numbers2[i] < numbers2[j]) {
-//       valueTemp2 = numbers2[j];  
+//       valueTemp2 = numbers2[j];
 //       numbers2[j] = numbers2[i];
 //       numbers2[i] = valueTemp2;
 //     }
 //   }
 // }
 // numbers2.forEach(m=> console.log(`Kết quả được sắp xếp giảm dần ${m}`));
-
 
 // let numbers = [-3, 5, 1, 3, 9, 2, 10, 11];
 // let valueTemp2 = 0;
@@ -84,7 +82,6 @@
 //   numbers[numbers.length - 1 - i] = valueTemp2;
 // }
 // numbers.forEach(m=> console.log(`Kết quả được sắp xếp đảo ngược ${m}`));
-
 
 // let b = document.getElementById("carogame");
 
@@ -103,7 +100,6 @@
 
 // data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
 // b.innerHTML = data;
-
 
 // function changeValue() {
 //   let positionX = prompt("X: ");
@@ -155,7 +151,7 @@
 
 //     let first = s.charAt(0);
 //     let last = s.charAt(s.length - 1)
-    
+
 //     if(first != last)
 //     {
 //         return false;
@@ -165,7 +161,7 @@
 //         s = s.substring(1, s.length - 1)
 //         return isPalindrome(s);
 //     }
-    
+
 // }
 
 // let myCar1 = new Object();
@@ -191,8 +187,6 @@
 // changeValue(myCar2);
 // console.log(myCar2);
 
-
-
 // class Student{
 //     constructor(_name,_age)
 //     {
@@ -207,40 +201,75 @@
 // let student1 = new Student('The', '18');
 // student1.goToSchool();
 
-class Rectangle{
-    constructor(_width, _height)
-    {
-        this.width = _width;
-        this.height = _height;
-    }
-    tinhChuVi()
-    {
-        let chuVi = (this.width + this.height) * 2;
-        console.log(`Chu vi hình chữ nhật ${chuVi} m2`);
-        getResultCV.innerHTML =  chuVi;
-    }
+class Rectangle {
+  constructor(_x, _y, _width, _height, _color) {
+    this.width = _width;
+    this.height = _height;
+    this.x = _x;
+    this.y = _y;
+    this.color = _color;
+  }
+  tinhChuVi() {
+    let chuVi = (this.width + this.height) * 2;
+    console.log(`Chu vi hình chữ nhật ${chuVi} m2`);
+    getResultCV.innerHTML = chuVi;
+  }
 
-    tinhDienTich()
-    {
-        let dienTich = (this.width * this.height);
-        console.log(`Chu vi hình chữ nhật ${dienTich}`);
-        getResultDT.innerHTML =  dienTich;
+  tinhDienTich() {
+    let dienTich = this.width * this.height;
+    console.log(`Chu vi hình chữ nhật ${dienTich}`);
+    getResultDT.innerHTML = dienTich;
+  }
+  veCanvas() {
+    var canvas = document.getElementById("DemoCanvas");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+      // ctx.clearRect()
+      ctx.fillStyle = this.color; // color of fill
+      ctx.fillRect(this.x, this.y, this.width, this.height); // create rectangle
     }
-    veCanvas()
-    {
-        var canvas = document.getElementById("DemoCanvas");
-        if (canvas.getContext) 
-        {
-        var ctx = canvas.getContext('2d');
-        ctx.fillStyle='#fa4b2a';    // color of fill
-        ctx.fillRect(10, 40, this.width, this.height); // create rectangle  
-        }
-    }
+  }
+
+  moveRight() {
+    this.x += 10;
+  }
+  moveDown() {
+    this.x -= 20;
+  }
 }
-let widthRectangle = + prompt("Nhập chiều dài: ");
-let heightRectangle = + prompt("Nhập chiều rộng: ");
-
-let calRectangle = new Rectangle(widthRectangle, heightRectangle);
+// let widthRectangle = + prompt("Nhập chiều dài: ");
+// let heightRectangle = + prompt("Nhập chiều rộng: ");
+let x = Math.random() * 80;
+let y = Math.random() * 40;
+let stringColor = "";
+function color() {
+  let r = Math.round(Math.random() * 255);
+  let g = Math.round(Math.random() * 255);
+  let b = Math.round(Math.random() * 255);
+  stringColor = "rgb" + "(" + r + "," + g + "," + b + ")";
+}
+color();
+let calRectangle = new Rectangle(x, y, 100, 200, stringColor);
 calRectangle.tinhChuVi();
 calRectangle.tinhDienTich();
 calRectangle.veCanvas();
+// function move(){
+//     calRectangle.moveRight();
+// }
+var canvas = document.getElementById("DemoCanvas");
+var ctx = canvas.getContext("2d");
+setInterval(function () {
+  ctx.clearRect(0,0,canvas.width, canvas.height)
+  if(calRectangle.x < canvas.width - calRectangle.width - 10)
+  {
+    calRectangle.moveRight();
+  }
+  else if(calRectangle.x >= canvas.width - calRectangle.width - 10)
+  {
+    calRectangle.moveDown();
+    console.log(`y ${calRectangle.y}`);
+  }
+  
+  calRectangle.veCanvas();
+  console.log(`x ${calRectangle.x}`);
+}, 100);
