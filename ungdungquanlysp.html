@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quản lý sản phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            margin-right: 10px;
+        }
+
+        .form-container input {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .form-container button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .edit-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+        }
+
+        .delete-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .total-product {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quản lý sản phẩm</h1>
+
+        <div class="form-container">
+            <label for="product-name">Tên sản phẩm:</label>
+            <input type="text" id="product-name" />
+            <button onclick="addProduct()">Thêm</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="product-list"></tbody>
+        </table>
+
+        <div id="notification" class="notification"></div>
+        <div id="total-product" class="total-product"></div>
+    </div>
+
+    <script>// Mảng lưu trữ danh sách sản phẩm
+        var productList = ["Volkswagen", "Nissan", "Renault", "KIA", "Hyundai", "Chevrolet", "Cadillac"];
+
+        // Hàm hiển thị danh sách sản phẩm
+        function displayProductList() {
+            var tableBody = document.getElementById("product-list");
+            tableBody.innerHTML = "";                                           // gọi bảng table để sử dụng
+
+            for (var i = 0; i < productList.length; i++) {                      // vòng lặp chạy để duyệt mảng productList
+                var product = productList[i];                                   // gán 1 biến product để dễ gọi khi sử dụng
+                var row = document.createElement("tr");                         // tạo hàng
+                row.style.backgroundColor = i % 2 === 0 ? "#f2f2f2" : "#fff";   // tạo hàng chẵn lẻ thay đổi background
+
+                var productCell = document.createElement("td");                 // tạo ô dữ liệu trong hàng, nôm na là cột 1
+                productCell.innerHTML = product;                                // gán cột 1 với giá trị của product, cho nó hiển thị tên sản phẩm
+                row.appendChild(productCell);                                   // phương thức appenChild để chèn 1 ô dữ liệu vào hàng
+
+                var editCell = document.createElement("td");                    // tạo ra một ô dữ liệu mới
+                var editButton = document.createElement("button");              // tạo ra 1 nút button
+                editButton.innerHTML = "Sửa";                                   // hiển thị nội dung nút button thôi
+                editButton.className = "edit-button";                           // chỉnh sửa được nút editButton trong css
+                editButton.onclick = function (index) {                         // "khi ấn vào button thì sự kiện được bật 
+                    return function () {                                        // index để lựa chọn đúng sản phẩm muốn sửa"
+                        editProduct(index);
+                    };
+                }(i);                                                           // i là mỗi vòng lặp chạy qua, phần này tìm hiểu thêm
+                editCell.appendChild(editButton);                               // thêm nút vào ô dữ liệu
+                row.appendChild(editCell);                                      // thêm ô dữ liệu vào hàng
+
+                var deleteCell = document.createElement("td");                  // tạo thêm 1 ô dữ liệu
+                var deleteButton = document.createElement("button");            // tạo thêm 1 nút button
+                deleteButton.innerHTML = "Xoá";                                 // gắn nội dung hiển thị cho nút button
+                deleteButton.className = "delete-button";                       // chỉnh sửa css
+                deleteButton.onclick = function (index) {                       // hàm trung gian để xóa đúng index lựa chọn
+                    return function () {
+                        deleteProduct(index);
+                    };
+                }(i);
+                deleteCell.appendChild(deleteButton);                           // thêm nút vào ô dữ liệu
+                row.appendChild(deleteCell);                                    // thêm ô dữ liệu vào hàng
+
+                tableBody.appendChild(row);                                     // thêm hàng vào bảng
+            }
+
+            var totalProduct = document.getElementById("total-product");
+            totalProduct.innerHTML = "Tổng số sản phẩm: " + productList.length;
+        }
+
+        // Hàm thêm một sản phẩm vào danh sách
+        function addProduct() {
+            var productNameInput = document.getElementById("product-name");      // gọi thẻ input có id product-name
+            var productName = productNameInput.value.trim();                     // lấy giá trị khi người dùng nhập vào và loại bỏ khoảng trắng ở đầu và cuối chuỗi
+
+            if (productName !== "") {                                            // nếu giá trị nhập vào là khác "rỗng" thì:
+                productList.push(productName);                                   // thêm giá trị đó vào mảng bằng phương thức push
+                displayProductList();                                            // chạy hàm displayProductList đã cài đặt
+                showNotification("Thêm sản phẩm thành công!", "success");        // chạy hàm hiển thị thông báo
+                productNameInput.value = "";                                     // gán chuỗi rỗng để chữ nhập vào được xóa đi
+            } else {
+                showNotification("Vui lòng nhập tên sản phẩm!", "error");        // chạy hàm hiển thị thông báo
+            }
+        }
+
+        // Hàm sửa tên một sản phẩm trong danh sách
+        function editProduct(index) {
+            var newProductName = prompt("Nhập tên mới:");
+
+            if (newProductName !== null && newProductName.trim() !== "") {
+                productList[index] = newProductName.trim();
+                displayProductList();
+                showNotification("Sửa tên sản phẩm thành công!", "success");
+            } else {
+                showNotification("Vui lòng nhập tên sản phẩm!", "error");
+            }
+        }
+
+        // Hàm xoá một sản phẩm khỏi danh sách
+        function deleteProduct(index) {
+            productList.splice(index, 1);
+            displayProductList();
+            showNotification("Xoá sản phẩm thành công!", "success");
+        }
+
+        // Hàm hiển thị thông báo
+        function showNotification(message, type) {
+            var notification = document.getElementById("notification");
+            notification.innerHTML = message;
+            notification.className = "notification " + type;
+        }
+
+        // Gọi hàm hiển thị danh sách sản phẩm khi trang web được tải
+        displayProductList();
+    </script>
+</body>
+
+</html>

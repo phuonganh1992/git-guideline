@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chuyển đổi chữ in thường và in hoa</title>
+    <script>
+        function chuyenDoi() {
+            var input = document.getElementById("inputText").value;
+            var output = "";
+
+            for (var i = 0; i < input.length; i++) {
+                var char = input.charAt(i);
+
+                if (char >= 'a' && char <= 'z') {
+                    // Chữ in thường
+                    var uppercaseChar = String.fromCharCode(char.charCodeAt(0) - 32);
+                    output += uppercaseChar;
+                } else if (char >= 'A' && char <= 'Z') {
+                    // Chữ in hoa
+                    var lowercaseChar = String.fromCharCode(char.charCodeAt(0) + 32);
+                    output += lowercaseChar;
+                } else {
+                    // Không phải ký tự chữ cái
+                    output += char;
+                }
+            }
+
+            document.getElementById("outputText").innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+    <label for="inputText">Nhập chữ:</label>
+    <input type="text" id="inputText">
+    <button onclick="chuyenDoi()">Chuyển đổi</button>
+    <br>
+    <label for="outputText">Kết quả:</label>
+    <span id="outputText"></span>
+</body>
+
+</html>

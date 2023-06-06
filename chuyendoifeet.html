@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chuyển đổi giữa feet và meters</title>
+    <script>
+        function feetToMeters() {
+            var feet = parseFloat(document.getElementById("feet").value);
+            var meters = 0.305 * feet;
+            document.getElementById("result").innerHTML = meters + " meters";
+        }
+
+        function metersToFeet() {
+            var meters = parseFloat(document.getElementById("meters").value);
+            var feet = 3.279 * meters;
+            document.getElementById("result").innerHTML = feet + " feet";
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Chuyển đổi giữa feet và meters</h2>
+
+    <h3>Feet to Meters</h3>
+    <label for="feet">Feet:</label>
+    <input type="number" id="feet" />
+    <button onclick="feetToMeters()">Chuyển đổi</button>
+
+    <h3>Meters to Feet</h3>
+    <label for="meters">Meters:</label>
+    <input type="number" id="meters" />
+    <button onclick="metersToFeet()">Chuyển đổi</button>
+
+    <h3>Kết quả:</h3>
+    <div id="result"></div>
+</body>
+
+</html>

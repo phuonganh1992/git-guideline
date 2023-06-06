@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kiểm tra từ đối xứng</title>
+    <script>
+        function isPalindrome(s) {
+            // Chuyển đổi chuỗi thành chữ thường để so sánh dễ dàng hơn
+            s = s.toLowerCase();
+
+            // Base case: nếu chuỗi có độ dài là 0 hoặc 1, nó luôn là từ đối xứng
+            if (s.length === 0 || s.length === 1) {
+                return true;
+            }
+
+            // Kiểm tra ký tự đầu và ký tự cuối của chuỗi
+            if (s[0] === s[s.length - 1]) {
+                // Nếu hai ký tự giống nhau, kiểm tra chuỗi con giữa chúng bằng cách đệ quy
+                return isPalindrome(s.slice(1, s.length - 1));
+            } else {
+                // Nếu hai ký tự khác nhau, chuỗi không đối xứng
+                return false;
+            }
+        }
+
+        function checkPalindrome() {
+            var word = document.getElementById("word").value;
+            var result = isPalindrome(word);
+
+            var output = document.getElementById("output");
+            if (result) {
+                output.innerHTML = "Từ " + word + " là từ đối xứng.";
+            } else {
+                output.innerHTML = "Từ " + word + " không là từ đối xứng.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Kiểm tra từ đối xứng</h1>
+    <input type="text" id="word" placeholder="Nhập từ" />
+    <button onclick="checkPalindrome()">Kiểm tra</button>
+    <p id="output"></p>
+</body>
+
+</html>
