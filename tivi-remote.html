@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tivi-remote</title>
+</head>
+
+<body>
+    <script>
+        class Remote {
+            constructor(tv) {
+                this.tv = tv;
+            }
+            dieuKhienChuyenKenh(kenh) {
+                this.tv.dieuChinhKenh(kenh)
+                console.log("Đã dùng điều khiển chuyển kênh", kenh)
+            }
+            dieuKhienAmLuong(amLuong) {
+                this.tv.dieuChinhAmLuong(amLuong)
+            }
+            tat() {
+                this.tv = false;
+                console.log("Tivi đã được tắt bằng remote.");
+            }
+        }
+        class Tivi {
+            constructor() {
+                this.kenhHienThoi = "";
+                this.amLuongHienThoi = 0;
+                this.trangThai = false;
+            }
+            dieuChinhKenh(kenh) {
+                this.kenhHienThoi = kenh;
+                console.log("Đã được chuyển đến kênh.", kenh);
+            }
+            dieuChinhAmLuong(amLuong) {
+                this.amLuongHienThoi += amLuong;
+                console.log("Đã được tăng âm lượng lên.", amLuong);
+            }
+            bat() {
+                this.trangThai = true;
+                console.log("Tivi đã được bật.");
+            }
+            tat() {
+                this.trangThai = false;
+                console.log("Tivi đã được tắt.");
+            }
+        }
+        tivi123 = new Tivi();
+        remote = new Remote(tivi123);
+
+        tivi123.bat();
+        remote.dieuKhienChuyenKenh(7);
+        tivi123.dieuChinhKenh(3);
+        tivi123.dieuChinhAmLuong(2);
+        remote.tat()
+    </script>
+</body>
+
+</html>
