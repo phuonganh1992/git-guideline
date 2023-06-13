@@ -234,7 +234,10 @@ class Rectangle {
     this.x += 10;
   }
   moveDown() {
-    this.x -= 20;
+    this.y += 10;
+  }
+  moveLeft() {
+    this.x -= 10;
   }
 }
 // let widthRectangle = + prompt("Nhập chiều dài: ");
@@ -268,6 +271,10 @@ setInterval(function () {
   {
     calRectangle.moveDown();
     console.log(`y ${calRectangle.y}`);
+  }
+  else if(calRectangle.y >= canvas.height - calRectangle.height - 10)
+  {
+    calRectangle.moveLeft();
   }
   
   calRectangle.veCanvas();
