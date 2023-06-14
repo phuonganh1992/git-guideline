@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quản lý danh mục</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #e7d2d2;
+        }
+
+        .delete-btn,
+        .edit-btn {
+            padding: 6px 12px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+        }
+
+        #editModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #editModal input[type="text"],
+        #editModal input[type="checkbox"] {
+            margin-bottom: 10px;
+        }
+
+        #editModal button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>###</th>
+                <th>Số thứ tự</th>
+                <th>Tên</th>
+                <th>Mã danh mục</th>
+                <th>Enable</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTable">
+            <!-- Dữ liệu động sẽ được chèn vào đây -->
+        </tbody>
+    </table>
+
+    <div id="editModal">
+        <h2>Sửa danh mục</h2>
+        <input type="hidden" id="editIndex">
+        <label for="editName">Tên:</label>
+        <input type="text" id="editName">
+        <label for="editCode">Mã danh mục:</label>
+        <input type="text" id="editCode">
+        <label for="editEnable">Enable:</label>
+        <input type="checkbox" id="editEnable">
+        <button id="saveBtn">Lưu</button>
+        <button id="cancelBtn">Hủy</button>
+    </div>
+
+    <script>
+        // Dữ liệu mẫu
+        var categories = [
+            { "id": 23, "name": "Hóa chất", "code": "HC", "enable": true, "chemicals": [] },
+            { "id": 24, "name": "Sinh phẩm", "code": "SP", "enable": true, "chemicals": [] },
+            { "id": 28, "name": "Vật tư", "code": "VT", "enable": true, "chemicals": [] },
+            { "id": 29, "name": "Mẫu calibrate", "code": "CAL", "enable": true, "chemicals": [] },
+            { "id": 30, "name": "Mẫu QC", "code": "QC", "enable": true, "chemicals": [] },
+            { "id": 31, "name": "Danh mục thử nghiệm", "code": "DMT", "enable": true, "chemicals": [] },
+            { "id": 1032, "name": "Nước rửa", "code": "NR", "enable": true, "chemicals": [] },
+            { "id": 1034, "name": "Test nhanh", "code": "TN", "enable": true, "chemicals": [] }
+        ];
+
+        var editModal = document.getElementById('editModal');
+        var saveBtn = document.getElementById('saveBtn');
+        var cancelBtn = document.getElementById('cancelBtn');
+        var editNameInput = document.getElementById('editName');
+        var editCodeInput = document.getElementById('editCode');
+        var editEnableInput = document.getElementById('editEnable');
+        var editIndexInput = document.getElementById('editIndex');
+
+        // Hàm để điền dữ liệu vào bảng
+        function populateTable() {
+            var tbody = document.getElementById('categoryTable');
+            tbody.innerHTML = '';   // gắn chuối rỗng ,làm trống phía sau
+
+            for (var i = 0; i < categories.length; i++) {
+                var category = categories[i];
+
+                var row = document.createElement('tr'); // tạo tr mới
+                tbody.appendChild(row);// thêm tr mới vào tbody
+
+                var checkboxCell = document.createElement('td');// tạo ô dữ liệu td
+                var checkbox = document.createElement('input');// tạo checkbox
+                checkbox.type = 'checkbox';
+                checkboxCell.appendChild(checkbox);// đưa checkox vào ô dữ liệu
+                row.appendChild(checkboxCell);//đưa ô dữ liệu vào hàng tr
+
+                var indexCell = document.createElement('td');
+                indexCell.textContent = i + 1;
+                row.appendChild(indexCell);
+
+                var nameCell = document.createElement('td');
+                nameCell.textContent = category.name;
+                row.appendChild(nameCell);
+
+                var codeCell = document.createElement('td');
+                codeCell.textContent = category.code;
+                row.appendChild(codeCell);
+
+                var enableCell = document.createElement('td');
+                var enableCheckbox = document.createElement('input');
+                enableCheckbox.type = 'checkbox';
+                enableCheckbox.checked = category.enable;
+                enableCheckbox.disabled = true;
+                enableCell.appendChild(enableCheckbox);
+                row.appendChild(enableCell);
+
+                var actionCell = document.createElement('td');
+                var deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = 'Xóa';
+                deleteBtn.addEventListener('click', deleteCategory.bind(null, i));
+                actionCell.appendChild(deleteBtn);
+                actionCell.appendChild(document.createTextNode(' '));
+
+                var editBtn = document.createElement('button');
+                editBtn.className = 'edit-btn';
+                editBtn.textContent = 'Sửa';
+                editBtn.addEventListener('click', openEditModal.bind(null, i));
+                actionCell.appendChild(editBtn);
+                row.appendChild(actionCell);
+            }
+        }
+
+        // Hàm để xóa một danh mục
+        function deleteCategory(index) {
+            categories.splice(index, 1);
+            populateTable();
+        }
+
+        // Hàm để mở cửa sổ chỉnh sửa
+        function openEditModal(index) {
+            var category = categories[index];
+            editNameInput.value = category.name;
+            editCodeInput.value = category.code;
+            editEnableInput.checked = category.enable;
+            editIndexInput.value = index;
+            editModal.style.display = 'block';
+        }
+
+        // Hàm để đóng cửa sổ chỉnh sửa
+        function closeEditModal() {
+            editModal.style.display = 'none';
+        }
+
+        // Hàm để lưu danh mục đã chỉnh sửa
+        function saveCategory() {
+            var index = parseInt(editIndexInput.value);
+            categories[index].name = editNameInput.value;
+            categories[index].code = editCodeInput.value;
+            categories[index].enable = editEnableInput.checked;
+            closeEditModal();
+            populateTable();
+        }
+
+        saveBtn.addEventListener('click', saveCategory);
+        cancelBtn.addEventListener('click', closeEditModal);
+
+        // Điền dữ liệu vào bảng khi trang được tải
+        populateTable();
+    </script>
+</body>
+
+</html>
