@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm Người Yêu</title>
+</head>
+<body>
+  <h1>Tìm Người Yêu</h1>
+
+  <form id="form">
+    <label for="gender">Giới tính:</label>
+    <select id="gender">
+      <option value="">Chọn giới tính</option>
+      <option value="male">Nam</option>
+      <option value="female">Nữ</option>
+    </select>
+
+    <input type="submit" value="Lọc">
+  </form>
+
+  <table id="table">
+    <thead>
+      <tr>
+        <th>Họ và tên</th>
+        <th>Giới tính</th>
+        <th>Cân nặng (kg)</th>
+        <th>Công việc</th>
+        <th>Tuổi tác</th>
+      </tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+
+  <script>
+    // Định nghĩa lớp người yêu
+    class Lover {
+      constructor(name, gender, weight, occupation, age, hobby) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.occupation = occupation;
+        this.age = age;
+        this.hobby = hobby;
+      }
+    }
+
+    // Danh sách các người yêu
+    let lovers = [
+      new Lover("Cristiano Ronaldo", "male", 70, "Cầu thủ bóng đá", 25, "Tự sướng"),
+      new Lover("Angelina Jolie", "female", 55, "Diễn viên", 30, "Cưa trai"),
+      new Lover("G-Dragon", "male", 80, "Rappẻ", 35, "Sống ảo"),
+      new Lover("Công chúa thủy tề", "female", 60, "Ca lẻ", 28, "Ca hát"),
+    ];
+
+    // Lấy các phần tử HTML cần sử dụng
+    let filterForm = document.getElementById("form");
+    let results = document.getElementById("results");
+
+    // Xử lý sự kiện khi form được nộp
+    filterForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+      // Lấy giá trị từ trường giới tính
+      let gender = document.getElementById("gender").value;
+
+      // Xóa kết quả hiện tại
+      results.innerHTML = "";
+
+      // Lọc và hiển thị kết quả
+      let filteredLovers = lovers.filter(function(lover) {
+        return gender === "" || lover.gender === gender;
+      });
+
+      filteredLovers.forEach(function(lover) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${lover.name}</td>
+          <td>${lover.gender}</td>
+          <td>${lover.weight}</td>
+          <td>${lover.occupation}</td>
+          <td>${lover.age}</td>
+        `;
+        results.appendChild(row);
+      });
+    });
+  </script>
+</body>
+</html>
