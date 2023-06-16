@@ -1,5 +1,5 @@
 //window.location.href="file.html" chuyển file html
-localStorage.clear();
+// localStorage.clear();
 function validateForm()
 {
     let name = document.getElementById("name").value;
@@ -57,10 +57,7 @@ function showData(){
         drawTable += '<td><button onclick = "deleteData('+index+')" class="btn btn-danger">Delete</button> <button onclick = "updateData('+index+')" class="btn btn-warning m-2">Edit</button> </td>';
         drawTable += "</tr>";
     });
-    if(drawTable != "")
-    {
-        document.getElementById("crudTable").innerHTML = drawTable;
-    }
+    document.getElementById("crudTable").innerHTML = drawTable;
 }
 
 document.onload = showData();
@@ -69,7 +66,7 @@ function AddData()
 {
     if(validateForm() == true)
     {
-        let name = document.getElementById("name").value;
+    let name = document.getElementById("name").value;
     let model = document.getElementById("model").value;
     let size = document.getElementById("size").value;
     let price = document.getElementById("price").value;
@@ -93,5 +90,58 @@ function AddData()
     document.getElementById("model").value = "";
     document.getElementById("size").value = "";
     document.getElementById("price").value = "";
+    }
+}
+function deleteData(index)
+{
+    var listMobile;
+    if(localStorage.getItem("listMobile") == null)
+    {
+        listMobile = [];
+    }
+    else{
+        listMobile = JSON.parse(localStorage.getItem("listMobile"));
+    }
+
+    listMobile.splice(index, 1);
+    localStorage.setItem("listMobile", JSON.stringify(listMobile));
+    showData();
+}
+
+function updateData(index){
+    document.getElementById("Submit").style.display = "none";
+    document.getElementById("Update").style.display = "block";
+    var listMobile;
+    if(localStorage.getItem("listMobile") == null)
+    {
+        listMobile = [];
+    }
+    else{
+        listMobile = JSON.parse(localStorage.getItem("listMobile"));
+    }
+
+    document.getElementById("name").value  = listMobile[index].name;
+    document.getElementById("model").value = listMobile[index].model;
+    document.getElementById("size").value  = listMobile[index].size;
+    document.getElementById("price").value = listMobile[index].price;
+
+    document.getElementById("Update").onclick = function(){
+        if(validateForm())
+        {
+            listMobile[index].name  = document.getElementById("name").value;
+            listMobile[index].model = document.getElementById("model").value;
+            listMobile[index].size  = document.getElementById("size").value;
+            listMobile[index].price = document.getElementById("price").value;
+
+            localStorage.setItem("listMobile", JSON.stringify(listMobile));
+            showData();
+            document.getElementById("name").value = "";
+            document.getElementById("model").value = "";
+            document.getElementById("size").value = "";
+            document.getElementById("price").value = "";
+
+            document.getElementById("Submit").style.display = "block";
+            document.getElementById("Update").style.display = "none";
+        }
     }
 }
