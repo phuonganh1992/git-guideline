@@ -32,6 +32,7 @@ function validateForm()
         alert("Price must be less than 0.");
         return false;
     }
+    return true;
 }
 function showData(){
     
@@ -44,17 +45,7 @@ function showData(){
         listMobile = JSON.parse(localStorage.getItem("listMobile"))
     }
 
-    let drawTable = "";
-    // if(listMobile.length == 0)
-    // {
-    //     drawTable += "<tr>";
-    //     drawTable += "<th>Name</th>";
-    //     drawTable += "<th>Model</th>";
-    //     drawTable += "<th>Size</th>";
-    //     drawTable += "<th>Price</th>";
-    //     drawTable += "<th>Action</th>";
-    //     drawTable += "</tr>";
-    // }
+    let drawTable ="";
 
     listMobile.forEach(function (element, index)
     {
@@ -76,7 +67,9 @@ document.onload = showData();
 
 function AddData()
 {
-    let name = document.getElementById("name").value;
+    if(validateForm() == true)
+    {
+        let name = document.getElementById("name").value;
     let model = document.getElementById("model").value;
     let size = document.getElementById("size").value;
     let price = document.getElementById("price").value;
@@ -100,4 +93,5 @@ function AddData()
     document.getElementById("model").value = "";
     document.getElementById("size").value = "";
     document.getElementById("price").value = "";
+    }
 }
