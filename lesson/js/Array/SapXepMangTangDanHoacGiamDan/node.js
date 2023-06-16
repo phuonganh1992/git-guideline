@@ -46,30 +46,36 @@
 
 
 //Sắp xếp mảng tăng dần
-let numbers = [5, -3, 1, 3, 2, 10];
+let numbers = [5, -3, 1, 3, 5, 10];
 let valueTemp = 0;
 for (let i = 0; i < numbers.length; i++) {
+  console.log(`Vong lap thu ${i}`);
   for (let j = i+1; j < numbers.length; j++) {
+    console.log(`i = ${i} : ${numbers[i]}`);
+    console.log(`j = ${j} : ${numbers[j]}`);
     if (numbers[i] > numbers[j]) {
+      console.log(`doi cho i va j`);
       valueTemp = numbers[j];  
       numbers[j] = numbers[i];
       numbers[i] = valueTemp;
     }
+
   }
+  console.log(`Vong lap thu ${i} :  ${numbers}`);
 }
-numbers.forEach(m=> console.log(`Kết quả được sắp xếp tăng dần ${m}`));
+// numbers.forEach(m=> console.log(`Kết quả được sắp xếp tăng dần ${m}`));
 
 console.log(`------------------------------------------------`)
 //Sắp xếp mảng giảm dần
-let numbers2 = [5, -3, 1, 3, 2, 10];
-let valueTemp2 = 0;
-for (let i = 0; i < numbers2.length; i++) {
-  for (let j = i+1; j < numbers2.length; j++) {
-    if (numbers2[i] < numbers2[j]) {
-      valueTemp2 = numbers2[j];  
-      numbers2[j] = numbers2[i];
-      numbers2[i] = valueTemp2;
-    }
-  }
-}
-numbers2.forEach(m=> console.log(`Kết quả được sắp xếp giảm dần ${m}`));
+// let numbers2 = [10, -3, 1, 3, 8, 11];
+// let valueTemp2 = 0;
+// for (let i = 0; i < numbers2.length; i++) {
+//   for (let j = i+1; j < numbers2.length; j++) {
+//     if (numbers2[i] < numbers2[j]) {
+//       valueTemp2 = numbers2[j];  
+//       numbers2[j] = numbers2[i];
+//       numbers2[i] = valueTemp2;
+//     }
+//   }
+// }
+// numbers2.forEach(m=> console.log(`Kết quả được sắp xếp giảm dần ${m}`));

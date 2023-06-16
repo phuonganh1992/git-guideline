@@ -46,30 +46,35 @@
 // console.log(`In ra indexFor:  ${indexFor}`);
 
 
+// let numbers = [-3, 5, 1, 3, 2, 10];
+// let findMax = numbers[0];
+// let index = 0;
+
+// for (let i = 0; i < numbers.length; i++) {
+//   if(numbers[i] > findMax)
+//   {
+//     findMax = numbers[i];
+//     index = i;
+//   }
+// }
+// console.log(`max: " + ${findMax} + " at position " + ${index}`);
+
+
+// let numbersMin = [-3, 5, 1, 3, 2, 10];
+// let findMin = numbers[0];
+// let indexMin = 0;
+
+// for (let x = 0; x < numbers.length; x++) {
+//   if(numbers[x] < findMin)
+//   {
+//     findMin = numbers[x];
+//     indexMin = x;
+//   }
+// }
+// console.log(`min: " + ${findMin} + " at position " + ${indexMin}`);
+
 let numbers = [-3, 5, 1, 3, 2, 10];
-let findMax = numbers[0];
-let index = 0;
 
 for (let i = 0; i < numbers.length; i++) {
-  if(numbers[i] > findMax)
-  {
-    findMax = numbers[i];
-    index = i;
-  }
+  numbers[i] =  numbers[numbers.length - i]
 }
-console.log(`max: " + ${findMax} + " at position " + ${index}`);
-
-
-let numbersMin = [-3, 5, 1, 3, 2, 10];
-let findMin = numbers[0];
-let indexMin = 0;
-
-for (let x = 0; x < numbers.length; x++) {
-  if(numbers[x] < findMin)
-  {
-    findMin = numbers[x];
-    indexMin = x;
-  }
-}
-console.log(`min: " + ${findMin} + " at position " + ${indexMin}`);
-

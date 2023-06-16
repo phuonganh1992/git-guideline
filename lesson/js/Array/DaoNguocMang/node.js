@@ -76,11 +76,11 @@
 
 
 let numbers = [-3, 5, 1, 3, 9, 2, 10, 11];
-let valueTemp2 = 0;
+let valueTemp = 0;
 
 for (let i = 0; i < numbers.length/2; i++) {
-  valueTemp2 = numbers[i];
+  valueTemp = numbers[i];
   numbers[i] =  numbers[numbers.length - 1 - i];
-  numbers[numbers.length - 1 - i] = valueTemp2;
+  numbers[numbers.length - 1 - i] = valueTemp;
 }
 numbers.forEach(m=> console.log(`Kết quả được sắp xếp đảo ngược ${m}`));

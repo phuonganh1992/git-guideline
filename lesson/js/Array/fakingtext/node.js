@@ -86,20 +86,38 @@
 // numbers.forEach(m=> console.log(`Kết quả được sắp xếp đảo ngược ${m}`));
 
 
-let text = ["H","Í"," ","A","N","H"," ","E","M","!"];
-let count = 0;
-function typeTextArea(){
-    let n = "";
-    if(count < text.length)
-    {
-        count++;
-    }
-    else
-    {
-        count = 0;
-    }
-    for (let i = 0; i < count; i++) {
-        n += text[i];
-    }
-    document.getElementById("txt").value = n;
+// let text = ["H","Í"," ","A","N","H"," ","E","M","!"];
+// let count = 0;
+// function typeTextArea(){
+//     let n = "";
+//     if(count < text.length)
+//     {
+//         count++;
+//     }
+//     else
+//     {
+//         count = 0;
+//     }
+//     for (let i = 0; i < count; i++) {
+//         n += text[i];
+//     }
+//     document.getElementById("txt").value = n;
+// }
+// let a = 8;
+// let b = 10;
+// function tinhTong(a, b)
+// {
+//     return a + b;
+// }
+// tinhTong(a, b);
+// console.log(tinhTong(a, b));
+
+let x = 10;
+let y = x;
+y = 20;
+function change(number)
+{
+    number = 30;
+    return number;
 }
+console.log(y);
