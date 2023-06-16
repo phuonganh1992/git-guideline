@@ -1,5 +1,5 @@
 //window.location.href="file.html" chuyển file html
-// localStorage.clear();
+ localStorage.clear();
 function validateForm()
 {
     let name = document.getElementById("name").value;
@@ -44,7 +44,7 @@ function showData(){
     else{
         listMobile = JSON.parse(localStorage.getItem("listMobile"))
     }
-
+    
     let drawTable ="";
 
     listMobile.forEach(function (element, index)
@@ -64,7 +64,7 @@ document.onload = showData();
 
 function AddData()
 {
-    if(validateForm() == true)
+    if(validateForm())
     {
     let name = document.getElementById("name").value;
     let model = document.getElementById("model").value;
@@ -143,5 +143,20 @@ function updateData(index){
             document.getElementById("Submit").style.display = "block";
             document.getElementById("Update").style.display = "none";
         }
+    }
+}
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(150)
+                .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
     }
 }

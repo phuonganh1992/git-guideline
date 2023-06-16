@@ -11,6 +11,12 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -60,14 +66,18 @@
               placeholder="Price"
             />
           </div>
+          <div class="form-group col-md-6 mb-3">
+            <input type='file' onchange="readURL(this);" />
+            <img id="blah" src="#" alt="your image" />
+          </div>
           <div class="col-lg-12 mt-5">
             <button class="btn btn-success" id="Submit" onclick="AddData()"> Add Data</button>
             <button class="btn btn-primary" id="Update" onclick="UpdateData()"> Update Data</button>
-        </div>
+          </div>
         <hr>
         <div class="row mt-5">
             <div class="col-12">
-                <table class="table table-borderd" id="crudTable">
+                <table class="table table-borderd" >
                   <thead>
                     <tr>
                         <th>Name</th>
@@ -76,7 +86,11 @@
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
+                    
                   </thead>
+                  <tbody id="crudTable">
+
+                  </tbody>
                 </table>
             </div>
         </div>

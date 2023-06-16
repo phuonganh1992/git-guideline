@@ -7,3 +7,5 @@ body{
 #Update{
     display: none;
 }
+article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
