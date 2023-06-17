@@ -43,7 +43,7 @@ function showFormUpdate(index) {
 
 function actionSave() {
     students[selectedIndex];
-    
+
     doiTuong.maSV = document.getElementById("maso").value;
     doiTuong.tenSV = document.getElementById("ten").value;
     doiTuong.namSinh = document.getElementById("namsinh").value;
@@ -51,6 +51,7 @@ function actionSave() {
     doiTuong.khoa = document.getElementById("khoa").value;
     doiTuong.queQuan = document.getElementById("quequan").value;
     doiTuong.email = document.getElementById("email").value;
+
     hienthi()
 
 }
