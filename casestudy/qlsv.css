@@ -11,17 +11,71 @@ td {
 }
 
 th {
-    background-color: blue;
+    background-color: rgb(63, 63, 248);
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #ebe7e7;
 }
-.delete-button{
-    background-color: red;
+
+.delete-button {
+    background-color: rgb(255, 22, 22);
     color: white;
     border: none;
 }
-.edit-button{
+
+.edit-button {
     border: none;
+}
+
+/* //////////// */
+/* Áp dụng cho tất cả các phần tử label */
+label {
+    display: block;
+    /* Hiển thị mỗi nhãn trên một dòng mới */
+    margin-bottom: 5px;
+    /* Khoảng cách từ dưới lên */
+    font-weight: bold;
+    /* Đậm chữ nhãn */
+}
+
+/* Áp dụng cho tất cả các phần tử input và select */
+input,
+select {
+    width: 300px;
+    /* Độ rộng của input và select */
+    padding: 8px;
+    /* Khoảng cách từ lề trong input và select */
+    border: 1px solid #ccc;
+    /* Đường viền xung quanh input và select */
+    border-radius: 4px;
+    /* Bo tròn góc của input và select */
+    margin-bottom: 10px;
+    /* Khoảng cách từ dưới lên */
+    font-size: 16px;
+    /* Cỡ chữ */
+}
+
+/* Áp dụng cho các phần tử button */
+.button1 {
+    padding: 10px 20px;
+    /* Khoảng cách từ lề trong button */
+    background-color: #4CAF50;
+    /* Màu nền của button */
+    color: white;
+    /* Màu chữ của button */
+    border: none;
+    /* Không có đường viền */
+    border-radius: 4px;
+    /* Bo tròn góc của button */
+    cursor: pointer;
+    /* Chuyển con trỏ thành hình bàn tay khi di chuột vào button */
+    font-size: 16px;
+    /* Cỡ chữ */
+}
+
+/* Áp dụng cho button đầu tiên (Lưu) */
+.button1:first-of-type {
+    margin-right: 10px;
+    /* Khoảng cách từ phải sang */
 }
