@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Giá hoa quả</h1>
+
+  <label for="fruit-name">Tên hoa quả:</label>
+  <input type="text" id="fruit-name" list="fruits">
+  <datalist id="fruits">
+    <option value="Dưa Hấu">
+    <option value="Táo">
+    <option value="Xoài">
+    <option value="Cam">
+    <option value="Chôm Chôm">
+    <option value="Măng Cụt">
+    <option value="Ổi">
+    <option value="?">
+
+  </datalist>
+
+  <button onclick="checkPrice()">Xem giá</button>
+
+  <p id="result"></p>
+
+    <script src="HQ.js"></script>
+</body>
+</html>
