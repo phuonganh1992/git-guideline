@@ -5,6 +5,7 @@ function validateForm()
     let name = document.getElementById("name").value;
     let model = document.getElementById("model").value;
     let size = document.getElementById("size").value;
+    let ram = document.getElementById("size").value;
     let price = document.getElementById("price").value;
 
     if(name == "")
@@ -20,6 +21,16 @@ function validateForm()
     if(size == "")
     {
         alert("Size is required.");
+        return false;
+    }
+    if(ram == "")
+    {
+        alert("Ram is required.");
+        return false;
+    }
+    else if(ram < 0)
+    {
+        alert("Ram must be less than 0.");
         return false;
     }
     if(price == "")
@@ -53,6 +64,7 @@ function showData(){
         drawTable += "<td>" + element.name  + "</td>";
         drawTable += "<td>" + element.model  + "</td>";
         drawTable += "<td>" + element.size  + "</td>";
+        drawTable += "<td>" + element.ram  + "</td>";
         drawTable += "<td>" + element.price  + "</td>";
         drawTable += '<td><button onclick = "deleteData('+index+')" class="btn btn-danger">Delete</button> <button onclick = "updateData('+index+')" class="btn btn-warning m-2">Edit</button> </td>';
         drawTable += "</tr>";
@@ -69,6 +81,7 @@ function AddData()
     let name = document.getElementById("name").value;
     let model = document.getElementById("model").value;
     let size = document.getElementById("size").value;
+    let ram = document.getElementById("ram").value;
     let price = document.getElementById("price").value;
     var listMobile;
     if(localStorage.getItem("listMobile") == null)
@@ -82,6 +95,7 @@ function AddData()
         name : name,
         model : model,
         size : size,
+        ram : ram,
         price : price,
     });
     localStorage.setItem("listMobile", JSON.stringify(listMobile));
@@ -89,6 +103,7 @@ function AddData()
     document.getElementById("name").value = "";
     document.getElementById("model").value = "";
     document.getElementById("size").value = "";
+    document.getElementById("ram").value = "";
     document.getElementById("price").value = "";
     }
 }
@@ -123,6 +138,7 @@ function updateData(index){
     document.getElementById("name").value  = listMobile[index].name;
     document.getElementById("model").value = listMobile[index].model;
     document.getElementById("size").value  = listMobile[index].size;
+    document.getElementById("ram").value = listMobile[index].ram;
     document.getElementById("price").value = listMobile[index].price;
 
     document.getElementById("Update").onclick = function(){
@@ -131,6 +147,7 @@ function updateData(index){
             listMobile[index].name  = document.getElementById("name").value;
             listMobile[index].model = document.getElementById("model").value;
             listMobile[index].size  = document.getElementById("size").value;
+            listMobile[index].ram = document.getElementById("ram").value;
             listMobile[index].price = document.getElementById("price").value;
 
             localStorage.setItem("listMobile", JSON.stringify(listMobile));
@@ -138,6 +155,7 @@ function updateData(index){
             document.getElementById("name").value = "";
             document.getElementById("model").value = "";
             document.getElementById("size").value = "";
+            document.getElementById("ram").value = "";
             document.getElementById("price").value = "";
 
             document.getElementById("Submit").style.display = "block";
